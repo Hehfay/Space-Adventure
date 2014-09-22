@@ -1,11 +1,12 @@
-Repository Name: Space-Adventure
+Space-Adventure
 ===============
 
-<h1> Group Members </h1>
-#Jeffrey "Hehfay" Hartman
-#Laura "" Buckman
-#Tj "Stroyer" Brodus
-#Isaac "Mirror Cat" Meisner
+<h1> Group Members
+</h1>
+Jeffrey "Hehfay" Hartman <br>
+Laura Buckman <br>
+Tj "Stroyer" Brodus <br>
+Isaac "Mirror Cat" Meisner <br>
 
 <h1> Quick Notes about this repository </h1>
 <p>
