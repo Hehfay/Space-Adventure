@@ -14,7 +14,7 @@ Isaac "Mirror Cat" Meisner <br>
 	315 taught by Dr. Thorne.  We are building this game using 
 	the free version of unity.
 <br>
-	Action items will be in the google drive document
+	Action items and todo lists will be in the google drive document
 </p> 
 
 
