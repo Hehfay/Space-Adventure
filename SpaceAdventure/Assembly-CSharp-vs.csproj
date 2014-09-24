@@ -46,7 +46,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\GunControls.cs" />
+     <Compile Include="Assets\Scripts\GunControls.cs" />
+     <Compile Include="Assets\Scripts\Movement.cs" />
+     <Compile Include="Assets\Scripts\ShotScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
