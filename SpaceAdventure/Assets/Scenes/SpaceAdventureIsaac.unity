@@ -577,7 +577,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 7
   groundCheck: {fileID: 2078370895}
-  whatIsGround: {}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 4294966783
   jumpForce: 700
 --- !u!212 &784565228
 SpriteRenderer:
@@ -629,7 +631,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 5a61db85f17974bc9a56a176d21e77a8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 1
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &880153170
