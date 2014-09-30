@@ -19,3 +19,5 @@ sysinfo.txt
 SpaceAdventure/Assets/Scripts/MovementIsaac.cs.meta
 
 SpaceAdventure/Assets/Scripts/Enemy_AI.cs.meta
+*.csproj
+*.sln
