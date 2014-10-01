@@ -22,7 +22,7 @@ Isaac "Mirror Cat" Meisner <br>
 Some usefull git stuff will go here
 </h2>
 
-git commit
+git commit <br>
 git push -u origin master
 
 </p>
