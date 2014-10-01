@@ -21,6 +21,9 @@ Isaac "Mirror Cat" Meisner <br>
 <h2>
 Some usefull git stuff will go here
 </h2>
+
+git commit
 git push -u origin master
+
 </p>
 
