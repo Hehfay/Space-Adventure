@@ -18,6 +18,9 @@ Isaac "Mirror Cat" Meisner <br>
 </p> 
 
 <p>
-	git push -u origin master
-	</p>
+<h2>
+Some usefull git stuff will go here
+</h2>
+git push -u origin master
+</p>
 
