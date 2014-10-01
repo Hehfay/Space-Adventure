@@ -10,7 +10,7 @@ public class MovementIsaac : MonoBehaviour {
 	public Transform groundCheck;
 	float groundRadius = 0.2f;
 	public LayerMask whatIsGround;
-	public float jumpForce = 700f;
+	public float jumpForce = 300f;
 
 	// Use this for initialization
 	void Start () {
@@ -39,12 +39,14 @@ public class MovementIsaac : MonoBehaviour {
 
 
 	void Update(){
-		//if we are on the ground and the space bar was pressed, change our ground state and add an upward force
-		if(grounded && Input.GetKeyDown (KeyCode.Space)){
-			anim.SetBool("Ground",false);
-			rigidbody2D.AddForce (new Vector2(0,jumpForce));
+				//if we are on the ground and up was pressed, change our ground state and add an upward force
+				if (grounded) { 
+						if (Input.GetAxis ("Vertical") > 0) {
+								anim.SetBool ("Ground", false);
+								rigidbody2D.AddForce (new Vector2 (0, jumpForce));
+						}
+				}
 		}
-	}
 
 	void Flip(){
 		facingRight = !facingRight;
