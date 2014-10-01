@@ -17,4 +17,7 @@ Isaac "Mirror Cat" Meisner <br>
 	Action items and todo lists will be in the google drive document
 </p> 
 
+<p>
+	git push -u origin master
+	</p>
 
