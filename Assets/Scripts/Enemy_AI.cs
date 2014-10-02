@@ -10,6 +10,14 @@ public class Enemy_AI : MonoBehaviour
 	};
 	private directions currentDirection;
 
+	private enum alertStatus
+	{
+		idle,
+		caution,
+		alert
+	};
+	private enum enemyAlertStatus
+
 	// Use this for initialization
 	void Start () 
 	{
