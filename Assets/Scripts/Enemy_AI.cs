@@ -8,7 +8,6 @@ public class Enemy_AI : MonoBehaviour
 		left,
 		right
 	};
-
 	private directions currentDirection;
 
 	// Use this for initialization
@@ -32,7 +31,7 @@ public class Enemy_AI : MonoBehaviour
 
 	}
 
-	void OnCollisionEnter2D(Collision2D other)
+	void OnTriggerEnter2D(Collider2D other)
 	{
 		if(other.gameObject.tag == "Left")
 		{
