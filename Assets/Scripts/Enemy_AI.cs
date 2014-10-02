@@ -16,10 +16,10 @@ public class Enemy_AI : MonoBehaviour
 		caution,
 		alert
 	};
-	private enum enemyAlertStatus
+	private alertStatus enemyAlertStatus;
 
 	// Use this for initialization
-	void Start () 
+	void Start() 
 	{
 		currentDirection = directions.right;
 	}
