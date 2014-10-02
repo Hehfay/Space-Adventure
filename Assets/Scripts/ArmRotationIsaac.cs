@@ -22,5 +22,8 @@ public class ArmRotationIsaac : MonoBehaviour {
 				} else
 					transform.rotation = Quaternion.Euler (0f, 0f, rotate);
 
+		if(!facingRight){
+
+
 	}
 }
