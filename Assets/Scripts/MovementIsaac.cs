@@ -1,6 +1,4 @@
-﻿namespace MovementIsaac {
-
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class MovementIsaac : MonoBehaviour {
@@ -50,13 +48,12 @@ public class MovementIsaac : MonoBehaviour {
 				}
 		}
 
-	public void Flip(){
-		facingRight = !facingRight;
-		Vector3 theScale = transform.localScale;
-		theScale.x *= -1;
-		transform.localScale = theScale;
-	}
+
+		public void Flip(){
+			facingRight = !facingRight;
+			Vector3 theScale = transform.localScale;
+			theScale.x *= -1;
+			transform.localScale = theScale;
+		}
 
 }
-}
-

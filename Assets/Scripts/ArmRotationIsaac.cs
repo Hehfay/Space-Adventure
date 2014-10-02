@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
-using MovementIsaac;
 
 public class ArmRotationIsaac : MonoBehaviour {
 		
+	public MovementIsaac player;
+
+	void Start() {
+		}
 
 	public int rotationOffset = 0;
 	bool facingRight = true;
-	public GameObject player;
 
 	// Update is called once per frame
 	void Update () {
@@ -18,7 +20,7 @@ public class ArmRotationIsaac : MonoBehaviour {
 				float rotZ = Mathf.Atan2 (difference.y, difference.x) * Mathf.Rad2Deg;	// find the angle in degrees
 				float rotate = rotZ + rotationOffset;
 				if (rotate > 90)
-						MovementIsaac.MovementIsaac.Flip();
+						player.Flip();
 				else if (rotate < -90) {
 						rotate = -90;
 						transform.rotation = Quaternion.Euler (0f, 0f, rotate);
