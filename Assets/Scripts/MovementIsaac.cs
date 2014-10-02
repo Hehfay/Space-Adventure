@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿namespace MovementIsaac {
+
+using UnityEngine;
 using System.Collections;
 
 public class MovementIsaac : MonoBehaviour {
@@ -10,8 +12,7 @@ public class MovementIsaac : MonoBehaviour {
 	public Transform groundCheck;
 	float groundRadius = 0.2f;
 	public LayerMask whatIsGround;
-	public float jumpForce = 400
-		f;
+	public float jumpForce = 400f;
 
 	// Use this for initialization
 	void Start () {
@@ -49,7 +50,7 @@ public class MovementIsaac : MonoBehaviour {
 				}
 		}
 
-	void Flip(){
+	public void Flip(){
 		facingRight = !facingRight;
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
@@ -57,5 +58,5 @@ public class MovementIsaac : MonoBehaviour {
 	}
 
 }
-
+}
 
