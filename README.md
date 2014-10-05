@@ -7,6 +7,7 @@ Jeffrey "Hehfay" Hartman <br>
 Laura Buckman <br>
 Tj "Stroyer" Brodus <br>
 Isaac "Mirror Cat" Meisner <br>
+Dr. "Danny" Thorne <br>
 
 <h3> Quick Notes about this repository </h3>
 <p>
