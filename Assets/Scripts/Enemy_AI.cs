@@ -3,61 +3,72 @@ using System.Collections;
 
 public class Enemy_AI : MonoBehaviour 
 {
-	Vector2 sightDirection;
-
-	private enum directions
-	{
+	/* Enemy's current facing direction flag */
+	private enum directions	{
 		left,
 		right
 	};
 	private directions currentDirection;
-
-	private enum alertStatus
-	{
+	
+	/* Indicating what state the enemy is in */
+	private enum alertStatus{
+		standing,
 		patroling,
 		attacking
-	};
+	}; 
 	private alertStatus enemyAlertStatus;
-
-	// Use this for initialization
+	
+	/* Used for ray cast hit detection */	
+	RaycastHit2D hit;
+		
+	/* Use this for initialization */
 	void Start() 
 	{
 		currentDirection = directions.right;
 	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
+
+	void FixedUpdate () 
+	{	
 		switch ( currentDirection ){
+
 			case directions.left:
-				Physics2D.Raycast (transform.position, sightDirection);
 				transform.Translate(Vector3.left * 0.05f);
+				hit = Physics2D.Raycast (transform.position, transform.TransformDirection(Vector3.left), 10);
+				rayCollision(hit);	
 				break;
+
 			case directions.right:
 				transform.Translate(Vector3.right * 0.05f);
-				Physics2D.Raycast (transform.position, sightDirection);
+				hit = Physics2D.Raycast (transform.position, transform.TransformDirection(Vector3.right), 10);
+				rayCollision(hit);	
 				break;
 		}
-	}
-
-	void OnDrawGizmos(){
-		Vector2 direction = new Vector2 (5, 0);
-		Gizmos.color = Color.red;
-		Gizmos.DrawLine (transform.position, direction);
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
-	{
+	{	
 		if(other.gameObject.tag == "Left")
 		{
 			currentDirection = directions.right;
-			sightDirection = new Vector2(1,0);
-		}
+		}	
 		if(other.gameObject.tag == "Right")
 		{
 			currentDirection = directions.left;
-			sightDirection = new Vector2(-1,0);
 		}
 	}
+	
+	void rayCollision(RaycastHit2D hit)
+	{
+		if(hit.collider != null)
+		{
+			if(hit.collider.tag == "Cover")
+			{
+				Debug.Log("Cover was hit.");
+			}
+		}
+		else
+		{
+			Debug.Log ("Nothing was hit.");
+		} 
+	}
 }
-
