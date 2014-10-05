@@ -4,7 +4,7 @@ using System.Collections;
 public class Enemy_AI : MonoBehaviour 
 {
 	/* Enemy's current facing direction flag */
-	private enum directions	{
+	private enum directions{
 		left,
 		right
 	};
@@ -22,13 +22,11 @@ public class Enemy_AI : MonoBehaviour
 	RaycastHit2D hit;
 		
 	/* Use this for initialization */
-	void Start() 
-	{
+	void Start(){
 		currentDirection = directions.right;
 	}
 
-	void FixedUpdate () 
-	{	
+	void FixedUpdate(){	
 		switch ( currentDirection ){
 
 			case directions.left:
@@ -45,29 +43,22 @@ public class Enemy_AI : MonoBehaviour
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D other)
-	{	
-		if(other.gameObject.tag == "Left")
-		{
+	void OnTriggerEnter2D(Collider2D other){	
+		if(other.gameObject.tag == "Left"){
 			currentDirection = directions.right;
 		}	
-		if(other.gameObject.tag == "Right")
-		{
+		if(other.gameObject.tag == "Right"){
 			currentDirection = directions.left;
 		}
 	}
 	
-	void rayCollision(RaycastHit2D hit)
-	{
-		if(hit.collider != null)
-		{
-			if(hit.collider.tag == "Cover")
-			{
+	void rayCollision(RaycastHit2D hit){
+		if(hit.collider != null){
+			if(hit.collider.tag == "Cover"){
 				Debug.Log("Cover was hit.");
 			}
 		}
-		else
-		{
+		else{
 			Debug.Log ("Nothing was hit.");
 		} 
 	}
