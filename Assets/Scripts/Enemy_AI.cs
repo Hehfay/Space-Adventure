@@ -3,43 +3,63 @@ using System.Collections;
 
 public class Enemy_AI : MonoBehaviour 
 {
-	private enum directions
-	{
+	/* Enemy's current facing direction flag */
+	private enum directions{
 		left,
 		right
 	};
 	private directions currentDirection;
-
-	// Use this for initialization
-	void Start () 
-	{
+	
+	/* Indicating what state the enemy is in */
+	private enum alertStatus{
+		standing,
+		patroling,
+		attacking
+	}; 
+	private alertStatus enemyAlertStatus;
+	
+	/* Used for ray cast hit detection */	
+	RaycastHit2D hit;
+		
+	/* Use this for initialization */
+	void Start(){
 		currentDirection = directions.right;
 	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-					switch ( currentDirection )
-					{
-									case directions.left:
-													transform.Translate(Vector3.left * 0.05f);
-													break;
-									case directions.right:
-													transform.Translate(Vector3.right * 0.05f);
-													break;
-					}
 
+	void FixedUpdate(){	
+		switch ( currentDirection ){
+
+			case directions.left:
+				transform.Translate(Vector3.left * 0.05f);
+				hit = Physics2D.Raycast (transform.position, transform.TransformDirection(Vector3.left), 10);
+				rayCollision(hit);	
+				break;
+
+			case directions.right:
+				transform.Translate(Vector3.right * 0.05f);
+				hit = Physics2D.Raycast (transform.position, transform.TransformDirection(Vector3.right), 10);
+				rayCollision(hit);	
+				break;
+		}
 	}
 
-	void OnTriggerEnter2D(Collider2D other)
-	{
-		if(other.gameObject.tag == "Left")
-		{
+	void OnTriggerEnter2D(Collider2D other){	
+		if(other.gameObject.tag == "Left"){
 			currentDirection = directions.right;
-		}
-		if(other.gameObject.tag == "Right")
-		{
+		}	
+		if(other.gameObject.tag == "Right"){
 			currentDirection = directions.left;
 		}
+	}
+	
+	void rayCollision(RaycastHit2D hit){
+		if(hit.collider != null){
+			if(hit.collider.tag == "Cover"){
+				Debug.Log("Cover was hit.");
+			}
+		}
+		else{
+			Debug.Log ("Nothing was hit.");
+		} 
 	}
 }

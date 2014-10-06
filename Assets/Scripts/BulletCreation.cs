@@ -16,7 +16,7 @@ public class BulletCreation : MonoBehaviour {
 	
 	void Shoot() {
 		
-		GameObject bullet = Instantiate(BulletPrefab) as GameObject;
+	//	GameObject bullet = Instantiate(BulletPrefab) as GameObject;
 		//Instantiate(BulletPrefab) as GameObject;
 		
 		//bullet.rigidbody.AddForce(transform.forward * BulletSpeed);
