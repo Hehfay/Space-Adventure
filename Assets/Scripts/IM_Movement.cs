@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MovementIsaac : MonoBehaviour {
+public class IM_Movement : MonoBehaviour {
 
 	public float maxSpeed = 10f;
 	public bool facingRight = true;

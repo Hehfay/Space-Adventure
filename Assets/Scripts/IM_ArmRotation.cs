@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ArmRotationIsaac : MonoBehaviour {
+public class IM_ArmRotation : MonoBehaviour {
 		
-	public MovementIsaac player;
+	public IM_Movement player;
 
 	void Start() {
 		}
