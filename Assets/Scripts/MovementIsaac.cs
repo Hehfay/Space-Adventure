@@ -10,8 +10,7 @@ public class MovementIsaac : MonoBehaviour {
 	public Transform groundCheck;
 	float groundRadius = 0.2f;
 	public LayerMask whatIsGround;
-	public float jumpForce = 400
-		f;
+	public float jumpForce = 40f;
 
 	// Use this for initialization
 	void Start () {
