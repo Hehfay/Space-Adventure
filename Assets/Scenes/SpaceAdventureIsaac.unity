@@ -277,7 +277,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 164810462}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.0453911088, y: -.00296177994, z: -1.5}
+  m_LocalPosition: {x: -.0503041856, y: -.0078751361, z: -1.5}
   m_LocalScale: {x: .281722754, y: .281722069, z: 1}
   m_Children: []
   m_Father: {fileID: 784565229}
@@ -581,7 +581,6 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 4294966783
-  jumpForce: 350
 --- !u!212 &784565228
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -611,8 +610,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 784565224}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .443805546, y: .503808916, z: 0}
-  m_LocalScale: {x: 3.54958916, y: 3.54959774, z: 1}
+  m_LocalPosition: {x: .0252360106, y: .468926907, z: 0}
+  m_LocalScale: {x: 3.54958892, y: 3.54959774, z: 1}
   m_Children:
   - {fileID: 2078370895}
   - {fileID: 2018141054}
@@ -946,7 +945,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 784565227}
-  rotationOffset: 0
 --- !u!1 &2078370894
 GameObject:
   m_ObjectHideFlags: 0

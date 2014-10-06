@@ -6,11 +6,11 @@ public class IM_Movement : MonoBehaviour {
 	public float maxSpeed = 10f;
 	public bool facingRight = true;
 	Animator anim;						//a value to represent our Animator
-	bool grounded = false;				//to check ground and to have a jumpforce we can change in the editor
+	bool grounded;						//to check ground and to have a jumpforce we can change in the editor
 	public Transform groundCheck;
 	float groundRadius = 0.2f;
 	public LayerMask whatIsGround;
-	public float jumpForce = 40f;
+	float jumpForce = 800f;
 
 	// Use this for initialization
 	void Start () {
@@ -23,46 +23,40 @@ public class IM_Movement : MonoBehaviour {
 		grounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);	//set our grounded bool
 		anim.SetBool ("Ground", grounded);														//set ground in our Animator to match grounded
 
-		anim.SetFloat ("vSpeed", rigidbody2D.velocity.y);										//set our vSpeed
+		Vector3 pos = transform.position;
 
 		float move = Input.GetAxis ("Horizontal");
-		rigidbody2D.velocity = new Vector2(move * maxSpeed, rigidbody2D.velocity.y);
+		if (move > 0) {
+						pos.x = pos.x + 0.1f;
+						transform.position = pos;
+				}
+		if (move < 0) {
+						pos.x = pos.x - 0.1f;
+						transform.position = pos;
+				}
 		anim.SetFloat ("Speed",Mathf.Abs (move));												//set our speed
 
-				
-		if(move > 0 && !facingRight)
-			FlipLeft();
-		else if(move < 0 && facingRight)
-			FlipRight();
 	}
 			
 
 
 	void Update(){
 				//if we are on the ground and up was pressed, change our ground state and add an upward force
-				if (grounded) { 
-						if (Input.GetAxis ("Vertical") > 0) {
+		if (grounded && Input.GetKeyDown (KeyCode.Space)) {
 								anim.SetBool ("Ground", false);
 								rigidbody2D.AddForce (new Vector2 (0, jumpForce));
 						}
 				}
-		}
-	public void Flip(){
-				facingRight = !facingRight;
-				Vector3 theScale = transform.localScale;
-				theScale.x *= -1;
-				transform.localScale = theScale;
-		}
 
-	public void FlipLeft(){
-		facingRight = !facingRight;
+	public void flipLeft(){
+		facingRight = false;
 		Vector3 theScale = transform.localScale;
 		theScale.x = -3.549589f;
 		transform.localScale = theScale;
 	}
-	public void FlipRight(){
-		facingRight = !facingRight;
-		Vector3 theScale = transform.localScale;
+	public void flipRight(){
+		facingRight = true;
+		Vector3 theScale = transform.localScale; 
 		theScale.x = 3.549589f;
 		transform.localScale = theScale;
 	}
