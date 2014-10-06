@@ -4,7 +4,7 @@ using System.Collections;
 public class MovementIsaac : MonoBehaviour {
 
 	public float maxSpeed = 10f;
-	bool facingRight = true;
+	public bool facingRight = true;
 	Animator anim;						//a value to represent our Animator
 	bool grounded = false;				//to check ground and to have a jumpforce we can change in the editor
 	public Transform groundCheck;
@@ -31,9 +31,9 @@ public class MovementIsaac : MonoBehaviour {
 
 				
 		if(move > 0 && !facingRight)
-			Flip();
+			FlipLeft();
 		else if(move < 0 && facingRight)
-			Flip();
+			FlipRight();
 	}
 			
 
@@ -55,6 +55,24 @@ public class MovementIsaac : MonoBehaviour {
 		transform.localScale = theScale;
 	}
 
+	public void Flip(){
+				facingRight = !facingRight;
+				Vector3 theScale = transform.localScale;
+				theScale.x *= -1;
+				transform.localScale = theScale;
+		}
+
+	public void FlipLeft(){
+		facingRight = !facingRight;
+		Vector3 theScale = transform.localScale;
+		theScale.x = -3.549589f;
+		transform.localScale = theScale;
+	}
+	public void FlipRight(){
+		facingRight = !facingRight;
+		Vector3 theScale = transform.localScale;
+		theScale.x = 3.549589f;
+		transform.localScale = theScale;
+	}
+
 }
-
-
