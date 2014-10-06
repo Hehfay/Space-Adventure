@@ -25,5 +25,5 @@ public class RaycastShooting : MonoBehaviour {
 				hit.transform.SendMessage("ApplyDammage", TheDammage, SendMessageOptions.DontRequireReceiver); //Call the method Apply Damage in the gameobject that is hit
 			}
 		}
-		
 	}
+}
