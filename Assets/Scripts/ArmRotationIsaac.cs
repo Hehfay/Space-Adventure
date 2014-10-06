@@ -9,7 +9,7 @@ public class ArmRotationIsaac : MonoBehaviour {
 		}
 
 	public int rotationOffset = 0;
-	bool facingRight = true;
+	//bool facingRight = true;
 
 	// Update is called once per frame
 	void FixedUpdate () {
