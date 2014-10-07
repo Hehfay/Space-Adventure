@@ -29,6 +29,12 @@ public class IM_ArmRotation : MonoBehaviour {
 		if ((theAngle < 90 && theAngle > -90) && (!(player.facingRight))){
 			player.flipRight();
 		}
+		/*if (theAngle == 90) {
+						theAngle = 90;
+				}
+		if (theAngle == -90) {
+						theAngle = -90;
+				}*/
 
 		if (player.facingRight == false) {
 						theAngle -= 180;

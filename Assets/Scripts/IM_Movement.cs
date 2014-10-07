@@ -10,7 +10,7 @@ public class IM_Movement : MonoBehaviour {
 	public Transform groundCheck;
 	float groundRadius = 0.2f;
 	public LayerMask whatIsGround;
-	float jumpForce = 800f;
+	float jumpForce = 900f;
 
 	// Use this for initialization
 	void Start () {
@@ -42,11 +42,18 @@ public class IM_Movement : MonoBehaviour {
 
 	void Update(){
 				//if we are on the ground and up was pressed, change our ground state and add an upward force
-		if (grounded && Input.GetKeyDown (KeyCode.Space)) {
-								anim.SetBool ("Ground", false);
-								rigidbody2D.AddForce (new Vector2 (0, jumpForce));
-						}
+				if (grounded && Input.GetKeyDown (KeyCode.Space)) {
+						anim.SetBool ("Ground", false);
+						rigidbody2D.AddForce (new Vector2 (0, jumpForce));
 				}
+
+				//Crouching
+				if (Input.GetKey("s")) {
+						anim.SetBool ("Crouch", true);
+				} else
+						anim.SetBool ("Crouch", false);
+				
+		}
 
 	public void flipLeft(){
 		facingRight = false;
@@ -60,5 +67,4 @@ public class IM_Movement : MonoBehaviour {
 		theScale.x = 3.549589f;
 		transform.localScale = theScale;
 	}
-
 }
