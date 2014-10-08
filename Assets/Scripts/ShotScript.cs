@@ -30,6 +30,7 @@ public class ShotScript : MonoBehaviour {
 				
 				timeToFire=Time.time+1/fireRate;
 				Shoot();
+
 				
 			}
 		}
@@ -43,6 +44,7 @@ public class ShotScript : MonoBehaviour {
 		if (hit.collider != null){
 			Debug.DrawLine(firePointPosition,hit.point,Color.red);
 			Debug.Log("Hit:"+hit.collider.name);
+
 		}
 	}
 	
