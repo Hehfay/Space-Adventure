@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Enemy_AI : MonoBehaviour 
+public class JH_Enemy_AI : MonoBehaviour 
 {
 	/*************/
 	/* VARIABLES */
