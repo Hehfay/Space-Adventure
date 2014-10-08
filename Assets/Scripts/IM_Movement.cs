@@ -27,11 +27,11 @@ public class IM_Movement : MonoBehaviour {
 
 		float move = Input.GetAxis ("Horizontal");
 		if (move > 0) {
-						pos.x = pos.x + 0.1f;
+						pos.x += 0.1f;
 						transform.position = pos;
 				}
 		if (move < 0) {
-						pos.x = pos.x - 0.1f;
+						pos.x -= 0.1f;
 						transform.position = pos;
 				}
 		anim.SetFloat ("Speed",Mathf.Abs (move));												//set our speed
@@ -59,12 +59,18 @@ public class IM_Movement : MonoBehaviour {
 		facingRight = false;
 		Vector3 theScale = transform.localScale;
 		theScale.x = -3.549589f;
+		Vector3 pos = transform.position;
+		pos.x -=  0.3830832f;
+		transform.position = pos;
 		transform.localScale = theScale;
 	}
 	public void flipRight(){
 		facingRight = true;
 		Vector3 theScale = transform.localScale; 
 		theScale.x = 3.549589f;
+		Vector3 pos = transform.position;
+		pos.x +=  0.3830832f;
+		transform.position = pos;
 		transform.localScale = theScale;
 	}
 }
