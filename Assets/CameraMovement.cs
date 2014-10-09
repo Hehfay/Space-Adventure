@@ -1,4 +1,13 @@
-﻿using UnityEngine;
+﻿/// CameraMovement.cs Script
+/// This script was found on an online tutorial.
+/// This script alters the movement of the 
+/// camera by making it smoother and delaying
+/// movement of the camera until the character has
+/// moved a certain distance.
+/// 
+/// -Written by Isaac Meisner
+
+using UnityEngine;
 using System.Collections;
 
 public class CameraMovement : MonoBehaviour {

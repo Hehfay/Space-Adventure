@@ -8,12 +8,6 @@ AnimatorController:
   m_Name: PlayerController
   serializedVersion: 2
   m_AnimatorParameters:
-  - m_Name: Speed
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
   - m_Name: Ground
     m_Type: 4
     m_DefaultFloat: 0
@@ -21,6 +15,12 @@ AnimatorController:
     m_DefaultBool: 1
     m_Controller: {fileID: 9100000}
   - m_Name: Crouch
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: Moving
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -50,8 +50,12 @@ Transition:
   m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 3
-    m_ConditionEvent: Speed
+  - m_ConditionMode: 1
+    m_ConditionEvent: Ground
+    m_EventTreshold: .00999999978
+    m_ExitTime: 1
+  - m_ConditionMode: 1
+    m_ConditionEvent: Moving
     m_EventTreshold: .00999999978
     m_ExitTime: 1
   m_Atomic: 1
@@ -70,8 +74,8 @@ Transition:
   m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 4
-    m_ConditionEvent: Speed
+  - m_ConditionMode: 2
+    m_ConditionEvent: Moving
     m_EventTreshold: .00999999978
     m_ExitTime: 1
   m_Atomic: 1
@@ -263,11 +267,6 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110249987}
-      second:
-      - {fileID: 110159509}
-      - {fileID: 110197538}
-    data:
       first: {fileID: 0}
       second:
       - {fileID: 110177164}
@@ -284,6 +283,11 @@ StateMachine:
       first: {fileID: 110214314}
       second:
       - {fileID: 110170453}
+    data:
+      first: {fileID: 110249987}
+      second:
+      - {fileID: 110159509}
+      - {fileID: 110197538}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 276, y: 96, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}

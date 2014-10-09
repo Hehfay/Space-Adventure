@@ -1,15 +1,19 @@
-﻿using UnityEngine;
+﻿/// IM_ArmRotation.cs Script
+/// This script rotates the arm of the player to point
+/// wherever the mouse is. When the mouse goes on the
+/// other side of where the player is facing, the player
+/// is flipped. The scale and a position shift variable
+/// are included to make the flipping look smoother.ß
+///
+/// -Written by Isaac Meisner
+
+using UnityEngine;
 using System.Collections;
 
 public class IM_ArmRotation : MonoBehaviour {
-		
-	public IM_Movement player;
 
-	void Start() {
-		}
-	
+	public IM_PlayerMovement player;
 
-	// Update is called once per frame
 	void FixedUpdate () {
 				
 		// subtracting the position of the player from the mouse position		
@@ -29,21 +33,24 @@ public class IM_ArmRotation : MonoBehaviour {
 		if ((theAngle < 90 && theAngle > -90) && (!(player.facingRight))){
 			player.flipRight();
 		}
-		/*if (theAngle == 90) {
-						theAngle = 90;
+		if (theAngle == 90) {
+						theAngle = 91;
+						//make animation for shooting straight above player
 				}
 		if (theAngle == -90) {
-						theAngle = -90;
-				}*/
+						theAngle = -91;
+						//make animation for shooting straight down
+				}
 
 		if (player.facingRight == false) {
 						theAngle -= 180;
 				}
 	
-
 		transform.rotation = Quaternion.Euler (0f, 0f, theAngle);
 		
 	}
+
+
 }
 
 

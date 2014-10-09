@@ -594,12 +594,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd550b5b8e6dbcc4696a7bdba947dde0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 10
-  facingRight: 1
   groundCheck: {fileID: 2078370895}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 4294966783
+  speedForce: 10
 --- !u!212 &784565228
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -962,7 +961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f3a5b05cfbe495492d6df7d0c41477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 784565227}
+  facingRight: 1
 --- !u!1 &2078370894
 GameObject:
   m_ObjectHideFlags: 0
