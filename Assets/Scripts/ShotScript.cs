@@ -44,7 +44,12 @@ public class ShotScript : MonoBehaviour {
 		if (hit.collider != null){
 			Debug.DrawLine(firePointPosition,hit.point,Color.red);
 			Debug.Log("Hit:"+hit.collider.name);
-			collider.gameObject.transform.localScale = new Vector3(transform.localScale.x * 1.5f, transform.localScale.y * 1.5f,0f);
+			//collider.gameObject.transform.localScale = new Vector3(transform.localScale.x * 1.5f, transform.localScale.y * 1.5f,0f);
+			Vector3 s = hit.collider.gameObject.transform.localScale;
+			s.x *= 0.5f;
+			s.y *= 0.5f;
+			hit.collider.gameObject.transform.localScale = s;
+
 			//collider.gameObject.transform.localScale.y += 0.5f;
 
 		}
