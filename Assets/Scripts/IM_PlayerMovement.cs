@@ -14,7 +14,7 @@ public class IM_PlayerMovement : MonoBehaviour {
 	Animator anim;						//a value to represent our Animator
 	bool grounded;						//to check ground and to have a jumpforce we can change in the editor
 	public Transform groundCheck;
-	float groundRadius = 0.2f;
+	float groundRadius = 0.1f;
 	public LayerMask whatIsGround;
 	float jumpForce = 900f;
 	public float speedForce = 10f;
