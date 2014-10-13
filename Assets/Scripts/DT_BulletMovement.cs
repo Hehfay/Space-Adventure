@@ -30,5 +30,13 @@ public class DT_BulletMovement : MonoBehaviour {
 		//pos.x = pos.x + 0.1f;
 		pos = pos + speed*direction;
 		transform.position = pos;
+
+
+		//Destroy Bullets
+
+		if (gameObject.collider2D == true){
+				Destroy (gameObject);
+		}
+
 	}
 }
