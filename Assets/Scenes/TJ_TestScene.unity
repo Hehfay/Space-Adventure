@@ -468,6 +468,7 @@ GameObject:
   - 4: {fileID: 820166277}
   - 212: {fileID: 820166276}
   - 114: {fileID: 820166278}
+  - 114: {fileID: 820166279}
   m_Layer: 9
   m_Name: GrowGun
   m_TagString: Untagged
@@ -527,6 +528,18 @@ MonoBehaviour:
   whatToHit:
     serializedVersion: 2
     m_Bits: 4294966779
+--- !u!114 &820166279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 820166275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dda28f12fc083474fa79101d345e0a88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BulletPrefab: {fileID: 100000, guid: dcd156c25d015c34eabadb46f44d9748, type: 2}
 --- !u!1001 &891606774
 Prefab:
   m_ObjectHideFlags: 0

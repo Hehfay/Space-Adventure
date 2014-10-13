@@ -7,7 +7,13 @@ public class DT_BulletCreation : MonoBehaviour {
 
 	void Update () {
 		
-		if( Input.GetMouseButtonDown(0))
+		if( Input.GetMouseButton(0))
+		{
+			Debug.Log ("Mouse Click");
+			
+			Shoot();
+		}
+		if( Input.GetMouseButton(1))
 		{
 			Debug.Log ("Mouse Click");
 			
