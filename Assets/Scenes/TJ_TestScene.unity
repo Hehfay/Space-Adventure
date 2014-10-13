@@ -130,7 +130,7 @@ GameObject:
   - 23: {fileID: 314670006}
   - 61: {fileID: 314670010}
   - 50: {fileID: 314670007}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -355,10 +355,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ffae925479e184e89c9eb3cc6d50d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 1000
+  fireRate: 5
   whatToHit:
     serializedVersion: 2
-    m_Bits: 4294966783
+    m_Bits: 4294966779
 --- !u!1001 &891606774
 Prefab:
   m_ObjectHideFlags: 0
@@ -400,11 +400,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 6c7d602c469f46241b34278f471b01f9, type: 2}
       propertyPath: whatToHit.m_Bits
-      value: 4294966783
+      value: 4294966779
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 6c7d602c469f46241b34278f471b01f9, type: 2}
       propertyPath: fireRate
-      value: 1000
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7d602c469f46241b34278f471b01f9, type: 2}
       propertyPath: m_LocalPosition.x
@@ -521,7 +521,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
-  m_FixedAngle: 0
+  m_FixedAngle: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -616,7 +616,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
-  m_FixedAngle: 0
+  m_FixedAngle: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -711,12 +711,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd550b5b8e6dbcc4696a7bdba947dde0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 10
-  facingRight: 1
   groundCheck: {fileID: 1203711244}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 4294966783
+  speedForce: 10
+  facingRight: 1
 --- !u!61 &1636206000
 BoxCollider2D:
   m_ObjectHideFlags: 0
