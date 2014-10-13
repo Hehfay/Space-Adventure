@@ -1,4 +1,9 @@
-﻿using UnityEngine;
+﻿/*******************/
+/* Enemy AI script */
+/* Author: Hehfay  */
+/*******************/
+
+using UnityEngine;
 using System.Collections;
 
 public class JH_Enemy_AI : MonoBehaviour 
@@ -7,29 +12,36 @@ public class JH_Enemy_AI : MonoBehaviour
 	/* VARIABLES */
 	/*************/
 
-	// Enemy Speeds
-	static private float standingSpeed   = 0.0f;
-	static private float patrollingSpeed = 0.025f;
-	static private float attackingSpeed  = 0.075f;
-	float[] speed = {standingSpeed, patrollingSpeed, attackingSpeed};
+	// ENEMY LINE OF SIGHT
+	RaycastHit2D lineOfSight;	
 
-	// Enemy's current direction flag 
-	private enum directions{
+	// ENEMY DIRECTION
+	Vector3 currentDirectionVector;
+	
+	public enum directions{
 		left,
 		right
 	}; 
-	private directions currentDirection;
+	public directions currentDirection;
 	
-	// Indicating what state the enemy is in 
-	private enum alertStatus{
-		standing,
+	public enum alertStatus{
+		standing,	
+		casualPatrol,
 		patrolling,
 		attacking
 	}; 
-	private alertStatus enemyAlertStatus;
+	public alertStatus enemyAlertStatus;
 	
-	// Used for ray cast hit detection 
-	RaycastHit2D hit;
+	static float standingSpeed   = 0.0f;
+	static float casualSpeed     = 0.015f;
+	static float patrollingSpeed = 0.025f;
+	static float attackingSpeed  = 0.075f;	
+	float[] speed = {
+		standingSpeed,
+	 	casualSpeed,	
+		patrollingSpeed, 
+		attackingSpeed
+	};	
 
 	/*************/
 	/* Functions */
@@ -37,47 +49,70 @@ public class JH_Enemy_AI : MonoBehaviour
 
 	// Use this for initialization 
 	void Start(){
-		currentDirection = directions.left;
-		enemyAlertStatus = alertStatus.attacking;
+		// Set the starting direction based on gui selection
+		if( currentDirection == directions.left ){
+				currentDirectionVector = new Vector3(-1,0,0); // Left
+		}
+		else {
+			currentDirectionVector = new Vector3(1,0,0); // Right
+		}
 	}
 
 	// Called on fixed intervals
-	void FixedUpdate(){	
-		switch ( currentDirection ){
-
-			case directions.left:
-				transform.Translate(Vector3.left * speed[(int)enemyAlertStatus]);
-				hit = Physics2D.Raycast (transform.position, transform.TransformDirection(Vector3.left), 10);
-				rayCollision(hit);	
-				break;
-
-			case directions.right:
-				transform.Translate(Vector3.right * speed[(int)enemyAlertStatus]);
-				hit = Physics2D.Raycast (transform.position, transform.TransformDirection(Vector3.right), 10);
-				rayCollision(hit);	
-				break;
-		}
+	void FixedUpdate(){		
+		lineOfSight = Physics2D.Raycast (transform.position, transform.TransformDirection(currentDirectionVector), 10);
+		rayCollision(lineOfSight);		
+		enemyMovement();
 	}
 	
 	// Collisions between the enemy and other tags
 	void OnTriggerEnter2D(Collider2D other){	
-		if(other.gameObject.tag == "Left"){
-			currentDirection = directions.right;
-		}	
-		if(other.gameObject.tag == "Right"){
-			currentDirection = directions.left;
-		}
+		if(other.gameObject.tag == "Edge Collider"){
+			changeDirection();
+		}		
 	}
 
-	// Collisions between enemy's raycast and other tags
-	void rayCollision(RaycastHit2D hit){
-		if(hit.collider != null){
-			if(hit.collider.tag == "Cover"){
-				Debug.Log("Cover was hit.");
+	// Collisions between enemy's line of sight raycast and other tags
+	void rayCollision(RaycastHit2D lineOfSight){
+		if(lineOfSight.collider != null){
+			if(lineOfSight.collider.tag == "Cover"){
+				Debug.Log("Cover was in line of sight");
 			}
 		}
 		else{
-			Debug.Log ("Nothing was hit.");
+			Debug.Log ("Nothing was in line of sight.");
 		} 
 	}
-}
+
+	void changeDirection(){
+		if( currentDirection == directions.left ){
+			currentDirection = directions.right;
+			currentDirectionVector = new Vector3(1,0,0); // Right
+		}
+		else{
+			currentDirection = directions.left;
+			currentDirectionVector = new Vector3(-1,0,0); // Left
+		}
+	}
+
+	void enemyMovement(){	
+		switch ( enemyAlertStatus ){
+		
+			case alertStatus.standing:	
+				float random_number = Random.value;	
+				if( random_number >= .99 ){
+					changeDirection();
+				}	
+			break;
+				
+			case alertStatus.attacking:
+			// TODO
+			case alertStatus.casualPatrol:
+			// TODO
+			case alertStatus.patrolling:
+				transform.Translate(currentDirectionVector * speed[(int)enemyAlertStatus]); // Player movement
+			break;
+		}
+	}
+} /* END OF FILE */
+
