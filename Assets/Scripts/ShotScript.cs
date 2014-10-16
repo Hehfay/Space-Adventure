@@ -70,9 +70,7 @@ public class ShotScript : MonoBehaviour {
 			s.x += .1f;
 			s.y += .1f;
 			hit.collider.gameObject.transform.localScale = s;
-
 			//collider.gameObject.transform.localScale.y += 0.5f;
-
 		}
 	}
 
@@ -89,12 +87,10 @@ public class ShotScript : MonoBehaviour {
 			Debug.Log("Hit:"+hit.collider.name);
 			//collider.gameObject.transform.localScale = new Vector3(transform.localScale.x * 1.5f, transform.localScale.y * 1.5f,0f);
 			Vector3 s = hit.collider.gameObject.transform.localScale;
-			s.x -= .1f;
-			s.y -= .1f;
+			s.x *= .98f;
+			s.y *= .98f;
 			hit.collider.gameObject.transform.localScale = s;
-			
 			//collider.gameObject.transform.localScale.y += 0.5f;
-			
 		}
 	}
 	
