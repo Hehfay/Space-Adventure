@@ -12,6 +12,7 @@ using System.Collections;
 
 public class CameraMovement : MonoBehaviour {
 		public Transform player;        // The target that the camera must follow.
+		//public IM_PlayerMovement character;
 		public float xMargin = 1f;      // Distance in the x axis the player can move before the camera follows.
 		public float yMargin = 1f;      // Distance in the y axis the player can move before the camera follows.
 		public float xSmooth = 8f;      // How smoothly the camera catches up with it's target movement in the x axis.
@@ -36,6 +37,9 @@ public class CameraMovement : MonoBehaviour {
 		
 		void FixedUpdate ()
 		{
+		//if (!(character.grounded)) {
+			//transform.position = player.transform.position;
+		//} else
 			TrackPlayer();
 		}
 		
@@ -59,8 +63,9 @@ public class CameraMovement : MonoBehaviour {
 			// The target x and y coordinates should not be larger than the maximum or smaller than the minimum.
 			targetX = Mathf.Clamp(targetX, minXAndY.x, maxXAndY.x);
 			targetY = Mathf.Clamp(targetY, minXAndY.y, maxXAndY.y);
-			
+
 			// Set the camera's position to the target position with the same z component.
 			transform.position = new Vector3(targetX, targetY, transform.position.z);
+
 		}
 }

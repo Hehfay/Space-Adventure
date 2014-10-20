@@ -27,23 +27,26 @@ public class IM_ArmRotation : MonoBehaviour {
 
 		float theAngle = Mathf.Atan2 (difference.y, difference.x) * Mathf.Rad2Deg;	// find the angle in degrees
 
-		if((theAngle > 90 || theAngle < -90) && (player.facingRight)){
-			player.flipLeft();
+		if (theAngle == 90f) {
+			theAngle = 89f;
+			//make animation for shooting straight above player
 		}
-		if ((theAngle < 90 && theAngle > -90) && (!(player.facingRight))){
-			player.flipRight();
+
+		if (theAngle == -90f) {
+			theAngle = -89f;
+			//make animation for shooting straight down
 		}
-		if (theAngle == 90) {
-						theAngle = 91;
-						//make animation for shooting straight above player
-				}
-		if (theAngle == -90) {
-						theAngle = -91;
-						//make animation for shooting straight down
-				}
+
+	
+		
+		if ((theAngle < 90f && theAngle > -90f) && (!(player.facingRight))){
+				player.flipRight();
+		} else if ((theAngle > 90f || theAngle < -90f) && (player.facingRight)) {
+			player.flipLeft ();
+		}
 
 		if (player.facingRight == false) {
-						theAngle -= 180;
+						theAngle -= 180f;
 				}
 	
 		transform.rotation = Quaternion.Euler (0f, 0f, theAngle);
