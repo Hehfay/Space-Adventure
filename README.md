@@ -2,12 +2,13 @@ Space-Adventure
 ===============
 
 <h2> Group Members</h2>
-*Jeffrey "Hehfay" Hartman 
-*Laura Buckman 
-*Tj "Stroyer" Brodus
-*Isaac "Mirror Cat" Meisner
-*Dr. "Danny" Thorne
-
+<ul>
+<li>Jeffrey "Hehfay" Hartman</li> 
+<li>Laura Buckman </li>
+<li>Tj "Stroyer" Brodus</li>
+<li>Isaac "Mirror Cat" Meisner</li>
+<li>Dr. "Danny" Thorne
+</ul>
 <h3> Quick Notes about this repository </h3>
 <p>
 	This repository is for the 2d group in computer science 
