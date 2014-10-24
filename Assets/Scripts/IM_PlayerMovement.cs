@@ -75,6 +75,7 @@ public class IM_PlayerMovement : MonoBehaviour {
 		pos.x -=  positionShift;
 		transform.position = pos;
 		transform.localScale = theScale;
+		Debug.Log ("Flip left");
 	}
 	public void flipRight(){
 		facingRight = true;
@@ -84,6 +85,7 @@ public class IM_PlayerMovement : MonoBehaviour {
 		pos.x +=  positionShift;
 		transform.position = pos;
 		transform.localScale = theScale;
+		Debug.Log ("Flip Right");
 	}
 
 }

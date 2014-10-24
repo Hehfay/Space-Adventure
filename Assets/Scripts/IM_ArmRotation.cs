@@ -19,7 +19,7 @@ public class IM_ArmRotation : MonoBehaviour {
 		// subtracting the position of the player from the mouse position		
 		Vector3 difference = Camera.main.ScreenToWorldPoint (Input.mousePosition) - transform.position;
 
-		difference.Normalize ();		// normalizing the vector. Meaning that all the sum of the vector will be equal to 1
+		difference.Normalize ();
 
 		if (player.facingRight == false) {
 			difference.y *= -1;
@@ -27,20 +27,14 @@ public class IM_ArmRotation : MonoBehaviour {
 
 		float theAngle = Mathf.Atan2 (difference.y, difference.x) * Mathf.Rad2Deg;	// find the angle in degrees
 
+
+
 		if (theAngle == 90f) {
-			theAngle = 89f;
-			//make animation for shooting straight above player
-		}
 
-		if (theAngle == -90f) {
-			theAngle = -89f;
-			//make animation for shooting straight down
-		}
+		} else if (theAngle == -90f) {
 
-	
-		
-		if ((theAngle < 90f && theAngle > -90f) && (!(player.facingRight))){
-				player.flipRight();
+		} else if ((theAngle < 90f && theAngle > -90f) && (!(player.facingRight))){
+			player.flipRight();
 		} else if ((theAngle > 90f || theAngle < -90f) && (player.facingRight)) {
 			player.flipLeft ();
 		}
@@ -49,6 +43,8 @@ public class IM_ArmRotation : MonoBehaviour {
 						theAngle -= 180f;
 		}
 	
+		print (theAngle);
+
 		transform.rotation = Quaternion.Euler (0f, 0f, theAngle);
 		
 	}
