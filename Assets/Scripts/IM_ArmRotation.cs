@@ -47,12 +47,11 @@ public class IM_ArmRotation : MonoBehaviour {
 
 		if (player.facingRight == false) {
 						theAngle -= 180f;
-				}
+		}
 	
 		transform.rotation = Quaternion.Euler (0f, 0f, theAngle);
 		
 	}
-
 
 }
 
