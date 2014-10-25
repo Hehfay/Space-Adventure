@@ -32,11 +32,13 @@ public class DT_StickMoevement : MonoBehaviour {
     if( x < 0)
     {
       Player.transform.localScale = new Vector3( -3, 3, 1);
+      transform.localScale = new Vector3(  3, -3, 1);
       Player.transform.position = new Vector3( -0.15f, 0, 0);
     }
     else
     {
       Player.transform.localScale = new Vector3(  3, 3, 1);
+      transform.localScale = new Vector3(  3,  3, 1);
       Player.transform.position = new Vector3( 0.15f, 0, 0);
     }
   
