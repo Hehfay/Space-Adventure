@@ -86,11 +86,13 @@ public class ShotScript : MonoBehaviour {
 			Debug.DrawLine(firePointPosition,hit.point,Color.green);
 			Debug.Log("Hit:"+hit.collider.name);
 			//collider.gameObject.transform.localScale = new Vector3(transform.localScale.x * 1.5f, transform.localScale.y * 1.5f,0f);
-			Vector3 s = hit.collider.gameObject.transform.localScale;
-			s.x *= .98f;
-			s.y *= .98f;
-			hit.collider.gameObject.transform.localScale = s;
-			//collider.gameObject.transform.localScale.y += 0.5f;
+			if ( hit.collider.gameObject.transform.localScale.x > .2 && hit.collider.gameObject.transform.localScale.y > .2){
+				Vector3 s = hit.collider.gameObject.transform.localScale;
+				s.x -= .1f;
+				s.y -= .1f;
+				hit.collider.gameObject.transform.localScale = s;
+				//collider.gameObject.transform.localScale.y += 0.5f;
+			}
 		}
 	}
 	

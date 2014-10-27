@@ -886,6 +886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd550b5b8e6dbcc4696a7bdba947dde0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grounded: 0
   groundCheck: {fileID: 1203711244}
   whatIsGround:
     serializedVersion: 2
