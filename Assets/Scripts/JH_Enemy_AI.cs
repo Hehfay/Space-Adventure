@@ -3,6 +3,8 @@
 /* Author: Hehfay  */
 /*******************/
 
+//TODO Add layermask argument to all Physics2D.Raycast function calls.
+
 using UnityEngine;
 using System.Collections;
 
@@ -67,16 +69,22 @@ public class JH_Enemy_AI : MonoBehaviour
 	
 	// Collisions between the enemy and other tags
 	void OnTriggerEnter2D(Collider2D other){	
-		if(other.gameObject.tag == "Edge Collider"){
+		if( other.gameObject.tag == "Edge Collider" ){
 			changeDirection();
+			//TODO Add collider2d to enemy and if collision between 2 enemies change direction.
 		}		
 	}
 
 	// Collisions between enemy's line of sight raycast and other tags
 	void rayCollision(RaycastHit2D lineOfSight){
-		if(lineOfSight.collider != null){
-			if(lineOfSight.collider.tag == "Cover"){
+		if( lineOfSight.collider != null )
+		{
+			if( lineOfSight.collider.tag == "Cover" ){
 				Debug.Log("Cover was in line of sight");
+			}
+			if( lineOfSight.collider.tag == "Player" ){
+				enemyAlertStatus = alertStatus.attacking;
+				//If enemy sees the player go into attack mode
 			}
 		}
 		else{
@@ -96,9 +104,10 @@ public class JH_Enemy_AI : MonoBehaviour
 	}
 
 	void enemyMovement(){	
-		switch ( enemyAlertStatus ){
-		
+		switch ( enemyAlertStatus )
+		{	
 			case alertStatus.standing:	
+				// TODO Co-routine to handling changing directions
 				float random_number = Random.value;	
 				if( random_number >= .99 ){
 					changeDirection();
