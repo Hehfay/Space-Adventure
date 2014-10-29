@@ -5,7 +5,7 @@ Space-Adventure
 <ul>
 <li>Jeffrey "Hehfay" Hartman</li> 
 <li>Laura Buckman </li>
-<li>Tj "Stroyer" Brodus</li>
+<li>Tj "Stroyer" Broadus</li>
 <li>Isaac "Mirror Cat" Meisner</li>
 <li>Dr. "Danny" Thorne
 </ul>
