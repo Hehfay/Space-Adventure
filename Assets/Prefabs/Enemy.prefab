@@ -13,9 +13,9 @@ GameObject:
   - 114: {fileID: 11400000}
   - 50: {fileID: 5000000}
   - 61: {fileID: 6100000}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,8 +96,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552c7420dc4b82c47929468c728e6c34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDirection: 0
-  enemyAlertStatus: 0
+  whatToHit:
+    serializedVersion: 2
+    m_Bits: 4294967035
+  currentDirection: 1
+  enemyAlertStatus: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

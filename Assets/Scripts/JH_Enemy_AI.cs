@@ -19,6 +19,9 @@ public class JH_Enemy_AI : MonoBehaviour
 
 	// ENEMY DIRECTION
 	Vector3 currentDirectionVector;
+
+	// WHAT THE ENEMY LINE OF SIGHT RAY WILL COLIDE WITH
+	public LayerMask whatToHit;
 	
 	public enum directions{
 		left,
@@ -62,17 +65,16 @@ public class JH_Enemy_AI : MonoBehaviour
 
 	// Called on fixed intervals
 	void FixedUpdate(){		
-		lineOfSight = Physics2D.Raycast (transform.position, transform.TransformDirection(currentDirectionVector), 10);
+		lineOfSight = Physics2D.Raycast (transform.position, transform.TransformDirection(currentDirectionVector), 10, whatToHit);
 		rayCollision(lineOfSight);		
 		enemyMovement();
 	}
 	
 	// Collisions between the enemy and other tags
 	void OnTriggerEnter2D(Collider2D other){	
-		if( other.gameObject.tag == "Edge Collider" ){
+		if( other.gameObject.tag == "Edge Collider" || other.gameObject.tag == "Enemy" ){
 			changeDirection();
-			//TODO Add collider2d to enemy and if collision between 2 enemies change direction.
-		}		
+		}	
 	}
 
 	// Collisions between enemy's line of sight raycast and other tags
