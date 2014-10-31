@@ -1,2 +1,20 @@
-body {
+title {
+  text-align: center;
 }
+
+h1 {
+  text-align: center;
+}
+
+body {
+  background-color: orange;
+}
+
+h4 {
+  text-align:center;
+}
+
+li {
+  text-size: 18px;
+}
+
