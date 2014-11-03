@@ -1,17 +1,17 @@
-﻿/// IM_PlayerMovement.cs Script
-/// This script creates movement for the player including running
-/// left and right as well as jumping and crouching. The animator
-/// is referenced and manipulated whenever the character is running
-/// jumping or crouching.
-/// 
-/// -Written by Isaac Meisner
+﻿// IM_PlayerMovement.cs Script
+// This script creates movement for the player including running
+// left and right as well as jumping and crouching. The animator
+// is referenced and manipulated whenever the character is running
+// jumping or crouching.
+// 
+// -Written by Isaac Meisner
 
 using UnityEngine;
 using System.Collections;
 
 public class IM_PlayerMovement : MonoBehaviour {
 
-	Animator anim;						//a value to represent our Animator
+	Animator anim;								//a value to represent our Animator
 	public bool grounded;						//to check ground and to have a jumpforce we can change in the editor
 	public Transform groundCheck;
 	float groundRadius = 0.1f;
@@ -25,7 +25,6 @@ public class IM_PlayerMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent <Animator>();
-	
 	}
 	
 	void FixedUpdate () {
@@ -67,7 +66,7 @@ public class IM_PlayerMovement : MonoBehaviour {
 				
 		}
 
-	public void flipLeft(){
+	/*public void flipLeft(){
 		facingRight = false;
 		Vector3 theScale = transform.localScale;
 		theScale.x = -scaleOfPlayer;
@@ -86,6 +85,6 @@ public class IM_PlayerMovement : MonoBehaviour {
 		transform.position = pos;
 		transform.localScale = theScale;
 		Debug.Log ("Flip Right");
-	}
 
+	}*/
 }
