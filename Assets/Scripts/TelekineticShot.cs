@@ -18,21 +18,28 @@ public class TelekineticShot : MonoBehaviour {
 	}
 	
 	void Update(){
-		// Shoot Grow
-		if(fireRate==0){
-			if (Input.GetMouseButtonDown(0)){
-				
-				ShootMove();
+		if(WeaponSelect.currentWeapon == 2){
+			renderer.enabled = true; //
+			
+			//Do anything you have to do to make your weapon move, fire.. etc.
+			// Shoot MOve
+			if(fireRate==0){
+				if (Input.GetMouseButtonDown(0)){
+					
+					ShootMove();
+				}
+			}
+			else{
+				if (Input.GetMouseButton(0)&& Time.time> timeToFire){
+					
+					timeToFire=Time.time+1/fireRate;
+					ShootMove();
+					
+				}
 			}
 		}
 		else{
-			if (Input.GetMouseButton(0)&& Time.time> timeToFire){
-				
-				timeToFire=Time.time+1/fireRate;
-				ShootMove();
-				
-				
-			}
+			renderer.enabled = false; //
 		}
 	
 	}

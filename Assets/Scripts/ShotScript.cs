@@ -18,38 +18,44 @@ public class ShotScript : MonoBehaviour {
 	}
 	
 	void Update(){
-		// Shoot Grow
-		if(fireRate==0){
-			if (Input.GetMouseButtonDown(0)){
-				
-				ShootGrow();
+
+		if(WeaponSelect.currentWeapon == 1){
+			renderer.enabled = true; //enable the renderer of the weapon, so you can see it.
+			
+			//Do anything you have to do to make your weapon move, fire.. etc.
+
+			// Shoot Grow
+			if(fireRate==0){
+				if (Input.GetMouseButtonDown(0)){
+					
+					ShootGrow();
+				}
+			}
+			else{
+				if (Input.GetMouseButton(0)&& Time.time> timeToFire){
+					
+					timeToFire=Time.time+1/fireRate;
+					ShootGrow();
+				}
+			}
+			//Shoot Shrink
+			
+			if(fireRate==0){
+				if (Input.GetMouseButtonDown(1)){
+					
+					ShootShrink();
+				}
+			}
+			else{
+				if (Input.GetMouseButton(1)&& Time.time> timeToFire){
+					
+					timeToFire=Time.time+1/fireRate;
+					ShootShrink();
+				}
 			}
 		}
 		else{
-			if (Input.GetMouseButton(0)&& Time.time> timeToFire){
-				
-				timeToFire=Time.time+1/fireRate;
-				ShootGrow();
-
-				
-			}
-		}
-		//Shoot Shrink
-
-		if(fireRate==0){
-			if (Input.GetMouseButtonDown(1)){
-				
-				ShootShrink();
-			}
-		}
-		else{
-			if (Input.GetMouseButton(1)&& Time.time> timeToFire){
-				
-				timeToFire=Time.time+1/fireRate;
-				ShootShrink();
-				
-				
-			}
+			renderer.enabled = false; //disable the renderer of the weapon, so you can't see it if you have another weapon.
 		}
 	}
 

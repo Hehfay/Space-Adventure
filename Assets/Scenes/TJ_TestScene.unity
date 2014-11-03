@@ -83,11 +83,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400002, guid: 6c7d602c469f46241b34278f471b01f9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: .199130535
+      value: .261295617
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 6c7d602c469f46241b34278f471b01f9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .012858456
+      value: .0183555242
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 6c7d602c469f46241b34278f471b01f9, type: 2}
       propertyPath: m_LocalPosition.z
@@ -131,7 +131,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 6c7d602c469f46241b34278f471b01f9, type: 2}
       propertyPath: m_TagString
-      value: Gun
+      value: MoveGun
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 6c7d602c469f46241b34278f471b01f9, type: 2}
       propertyPath: m_Name
@@ -139,7 +139,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 6c7d602c469f46241b34278f471b01f9, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21200000, guid: 6c7d602c469f46241b34278f471b01f9, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 400002, guid: 6c7d602c469f46241b34278f471b01f9, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.62165296
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 6c7d602c469f46241b34278f471b01f9, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.62165296
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11400000, guid: 6c7d602c469f46241b34278f471b01f9, type: 2}
@@ -542,10 +554,9 @@ GameObject:
   - 212: {fileID: 820166276}
   - 114: {fileID: 820166278}
   - 114: {fileID: 820166279}
-  - 114: {fileID: 820166280}
   m_Layer: 9
   m_Name: GrowGun
-  m_TagString: Gun
+  m_TagString: GrowGun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -614,17 +625,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 100000, guid: c2f68c8c05fecd44798532669799988f, type: 2}
---- !u!114 &820166280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 820166275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 614befe1a74d4194ba706c60fba595d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &847174313
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,7 +750,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 6c7d602c469f46241b34278f471b01f9, type: 2}
       propertyPath: m_TagString
-      value: Gun
+      value: GrowGun
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 6c7d602c469f46241b34278f471b01f9, type: 2}
       propertyPath: m_IsActive
@@ -1043,6 +1043,7 @@ GameObject:
   - 4: {fileID: 1653375360}
   - 212: {fileID: 1653375361}
   - 114: {fileID: 1653375362}
+  - 114: {fileID: 1653375363}
   m_Layer: 9
   m_Name: Arm
   m_TagString: Untagged
@@ -1099,6 +1100,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1636205999}
+--- !u!114 &1653375363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1653375359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614befe1a74d4194ba706c60fba595d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2034215128
 GameObject:
   m_ObjectHideFlags: 0
@@ -1112,11 +1124,11 @@ GameObject:
   - 114: {fileID: 2034215130}
   m_Layer: 9
   m_Name: MoveGun
-  m_TagString: Gun
+  m_TagString: MoveGun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2034215129
 Transform:
   m_ObjectHideFlags: 0
@@ -1124,8 +1136,8 @@ Transform:
   m_PrefabInternal: {fileID: 10502072}
   m_GameObject: {fileID: 2034215128}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .199130535, y: .012858456, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: .261295617, y: .0183555242, z: 0}
+  m_LocalScale: {x: 1.62165296, y: 1.62165296, z: 1}
   m_Children:
   - {fileID: 2085438502}
   m_Father: {fileID: 1653375360}
