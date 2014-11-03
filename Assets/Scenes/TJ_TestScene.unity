@@ -383,6 +383,7 @@ GameObject:
   - 92: {fileID: 541144060}
   - 124: {fileID: 541144059}
   - 81: {fileID: 541144058}
+  - 114: {fileID: 541144062}
   m_Layer: 9
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -447,7 +448,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7.11000013
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -459,6 +460,17 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
+--- !u!114 &541144062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 541144056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a66f28c288aaf64eb72264f234c839d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &568575957
 GameObject:
   m_ObjectHideFlags: 0
@@ -1094,7 +1106,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1653375359}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7f3a5b05cfbe495492d6df7d0c41477, type: 3}
   m_Name: 
@@ -1153,7 +1165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e570fadb65dad4f438f79a6aaa72e0a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 5e+08
+  fireRate: 1.00000002e+30
   whatToHit:
     serializedVersion: 2
     m_Bits: 4294965755
