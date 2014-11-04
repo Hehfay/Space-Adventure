@@ -63,7 +63,7 @@ public class IM_PlayerMovement : MonoBehaviour {
 		if (Input.GetKey("s")) {
 				anim.SetBool ("Crouch", true);
 			}
-				
+	
 		}
 
 	/*public void flipLeft(){
