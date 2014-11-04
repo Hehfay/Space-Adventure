@@ -7,6 +7,7 @@ public class DT_BulletMovement : MonoBehaviour {
 	public Vector3 direction; // set by bullet creation script
 	public float speed; // set in GUI
 	public float range; // set in GUI
+	bool enemy_can_fire = true;
 
 	// Use this for initialization
 	void Start () {
@@ -25,11 +26,17 @@ public class DT_BulletMovement : MonoBehaviour {
 		if( Vector3.Distance(pos,pos0) > range)
 		{
 			Destroy( gameObject);
+			enemy_can_fire = true;
 		}
 
-		//pos.x = pos.x + 0.1f;
-		pos = pos + speed*direction;
-		transform.position = pos;
+		if( enemy_can_fire )
+		{
+			//pos.x = pos.x + 0.1f;
+			pos = pos + speed*direction;
+			transform.position = pos;
+			enemy_can_fire = false;
+		}
+		
 
 
 		//Destroy Bullets
