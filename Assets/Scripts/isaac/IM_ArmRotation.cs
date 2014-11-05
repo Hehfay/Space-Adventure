@@ -36,7 +36,7 @@ public class IM_ArmRotation : MonoBehaviour {
 		if ((theta > 90 || theta < -90) && (player.facingRight)) {
 			player.facingRight = false;
 			player.transform.localScale = new Vector3( -3.549589f, 3.549589f, 1);
-			transform.localScale = new Vector3(  -0.5f, -0.5f, 1);
+			transform.localScale = new Vector3(  -0.8f, -0.8f, 1);
 			Vector3 pos = player.transform.position;
 			pos.x -=  positionShift;
 			player.transform.position = pos;
@@ -45,7 +45,7 @@ public class IM_ArmRotation : MonoBehaviour {
 		if ((theta < 90 && theta > -90) && (player.facingRight == false)) {
 			player.facingRight = true;
 			player.transform.localScale = new Vector3(  3.549589f, 3.549589f, 1);
-			transform.localScale = new Vector3(  0.5f, 0.5f, 1);
+			transform.localScale = new Vector3(  0.8f, 0.8f, 1);
 			Vector3 pos = player.transform.position;
 			pos.x +=  positionShift;
 			player.transform.position = pos;
