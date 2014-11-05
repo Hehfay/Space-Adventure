@@ -3,7 +3,8 @@
 /// This script alters the movement of the 
 /// camera by making it smoother and delaying
 /// movement of the camera until the character has
-/// moved a certain distance.
+/// moved a certain distance. Adding a option to
+/// zoom in and out with the scroll wheel.
 /// 
 /// -Written by Isaac Meisner
 
@@ -19,6 +20,7 @@ public class CameraMovement : MonoBehaviour {
 		public float ySmooth = 8f;      // How smoothly the camera catches up with it's target movement in the y axis.
 		public Vector2 maxXAndY;        // The maximum x and y coordinates the camera can have.
 		public Vector2 minXAndY;        // The minimum x and y coordinates the camera can have.
+	          
 		
 		
 		bool CheckXMargin()

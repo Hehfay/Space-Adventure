@@ -19,8 +19,6 @@ public class IM_PlayerMovement : MonoBehaviour {
 	float jumpForce = 900f;
 	public float speedForce = 10f;
 	public bool facingRight = true;
-	float scaleOfPlayer = 3.549589f;
-	float positionShift = 0.3830832f;
 
 	// Use this for initialization
 	void Start () {
