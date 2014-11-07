@@ -36,6 +36,19 @@ public class CameraMovement : MonoBehaviour {
 			return Mathf.Abs(transform.position.y - player.position.y) > yMargin;
 		}
 		
+		void Update()
+		{
+			float cameraDistance;
+			cameraDistance = 3;
+			//cameraDistance = Mathf.Clamp (cameraDistance, 0, 8);
+			if (Input.GetAxis ("Mouse ScrollWheel") < 0) {
+						Camera.main.orthographicSize += 0.5f;
+				}
+			if (Input.GetAxis ("Mouse ScrollWheel") > 0) {
+					Camera.main.orthographicSize -= 0.5f;
+				}
+		}
+
 		
 		void FixedUpdate ()
 		{
