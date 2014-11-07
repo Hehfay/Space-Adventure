@@ -12,6 +12,9 @@ public class JH_Enemy_AI : MonoBehaviour
 	/* VARIABLES */
 	/*************/
 
+	// Counter used to keep track of how many bullets have been fired by the enemy.
+	public int bulletCounter;
+
 	// Bullet prefab
 	public GameObject BulletPrefab;
 
@@ -68,6 +71,7 @@ public class JH_Enemy_AI : MonoBehaviour
 
 		// Find the player game object
 		fireTo = GameObject.FindWithTag( "Player" );
+		bulletCounter = 0;
 	}
 
 	// Called on fixed intervals
@@ -112,6 +116,7 @@ public class JH_Enemy_AI : MonoBehaviour
 	}
 
 	void Move(){	
+
 		switch ( enemyAlertStatus ){	
 
 			case alertStatus.standing:	
@@ -133,6 +138,7 @@ public class JH_Enemy_AI : MonoBehaviour
 	}
 
 	void Look(){
+
 		switch ( enemyAlertStatus )
 		{
 			case alertStatus.attacking:
@@ -147,7 +153,7 @@ public class JH_Enemy_AI : MonoBehaviour
 
 				if( lineOfSight.collider.tag == "Player" )
 				{
-					Shoot();
+		//			Shoot();
 				}
 				break;
 			case alertStatus.standing:
@@ -162,64 +168,72 @@ public class JH_Enemy_AI : MonoBehaviour
 	}
 
 	void Shoot(){
+
+//		if( bulletCounter < 3 )
+//		{
+			GameObject bullet = Instantiate(BulletPrefab) as GameObject;
+//			bulletCounter++;
+
+			bullet.transform.position = transform.position;
+
+			DT_BulletMovement bulletScript = bullet.GetComponent<DT_BulletMovement>();
+
+//			bulletScript.sourceAI = this;
+
+			bulletScript.direction = fireTo.transform.position;
+//			bulletScript.speed = 0.05f;
+		}
 		
-		GameObject bullet = Instantiate(BulletPrefab) as GameObject;
-
-		bullet.transform.position = transform.position;
-
-		DT_BulletMovement bulletScript = bullet.GetComponent<DT_BulletMovement>();
-
-		bulletScript.direction = fireTo.transform.position;
-		bulletScript.speed = 0.05f;
-		
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//	}
 
 } /* END OF FILE */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

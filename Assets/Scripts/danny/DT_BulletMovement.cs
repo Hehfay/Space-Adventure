@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿// game object variable
+// when the ai shoots a bullet, 
+
+using UnityEngine;
 using System.Collections;
 
 public class DT_BulletMovement : MonoBehaviour {
@@ -8,6 +11,7 @@ public class DT_BulletMovement : MonoBehaviour {
 	public float speed; // set in GUI
 	public float range; // set in GUI
 	bool enemy_can_fire = true;
+	public JH_Enemy_AI sourceAI;
 
 	// Use this for initialization
 	void Start () {
@@ -27,6 +31,8 @@ public class DT_BulletMovement : MonoBehaviour {
 		{
 			Destroy( gameObject);
 			enemy_can_fire = true;
+			
+			sourceAI.bulletCounter--; 
 		}
 
 		if( enemy_can_fire )
