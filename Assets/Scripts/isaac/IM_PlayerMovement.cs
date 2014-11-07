@@ -33,14 +33,31 @@ public class IM_PlayerMovement : MonoBehaviour {
 
 		anim.SetBool ("Moving", false);									//Initialize the Moving animation
 
+		//Walking to the right
 		if (Input.GetKey ("d")) {
 			anim.SetBool ("Moving", true);
-			pos.x += 0.1f;
+			pos.x += 0.09f;
 			transform.position = pos;
 		}
+
+		//Sprinting to the right 
+		if (grounded && (Input.GetKey ("d") && Input.GetKey (KeyCode.LeftShift))) {
+			anim.SetBool ("Moving", true);
+			pos.x += 0.11f;
+			transform.position = pos;
+		}
+
+		//Walking to the left
 		if (Input.GetKey ("a")) {
 			anim.SetBool ("Moving", true);	
-			pos.x -= 0.1f;
+			pos.x -= 0.09f;
+			transform.position = pos;
+		}
+
+		//Sprinting to the right
+		if (grounded && (Input.GetKey ("a") && Input.GetKey (KeyCode.LeftShift))) {
+			anim.SetBool ("Moving", true);	
+			pos.x -= 0.11f;
 			transform.position = pos;
 		}
 
@@ -51,7 +68,7 @@ public class IM_PlayerMovement : MonoBehaviour {
 
 		//Jumping
 		//if we are on the ground and up was pressed, change our ground state and add an upward force
-				if (grounded && Input.GetKeyDown (KeyCode.Space)) {
+				if (grounded && (Input.GetKeyDown (KeyCode.Space) || Input.GetKeyDown ("w"))) {
 						anim.SetBool ("Ground", false);
 						rigidbody2D.AddForce (new Vector2 (0, jumpForce));
 				}
