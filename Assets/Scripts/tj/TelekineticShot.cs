@@ -60,8 +60,8 @@ public class TelekineticShot : MonoBehaviour {
 			p = hit.collider.gameObject.transform.localPosition;
 			s =hit.collider.gameObject.transform.localScale;
 
-			if (p.x - mousePosition.x <= 0.5 *s.x && p.x - mousePosition.x >=-0.5 * s.x ){
-				if (p.y - mousePosition.y <= 0.5 *s.y && p.y - mousePosition.y >=-0.5 * s.y ){
+			if (p.x - mousePosition.x <= 0.8 *s.x && p.x - mousePosition.x >=-0.8 * s.x ){
+				if (p.y - mousePosition.y <= 0.8 *s.y && p.y - mousePosition.y >=-0.8 * s.y ){
 					hit.collider.gameObject.transform.localPosition = mousePosition;
 			
 				}
