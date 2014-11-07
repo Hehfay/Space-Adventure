@@ -39,14 +39,20 @@ public class CameraMovement : MonoBehaviour {
 		void Update()
 		{
 			float cameraDistance;
-			cameraDistance = 3;
-			//cameraDistance = Mathf.Clamp (cameraDistance, 0, 8);
+			float cameraMin = 2.0f;
+			float cameraMax = 10.0f;
+			cameraDistance = Camera.main.orthographicSize;
 			if (Input.GetAxis ("Mouse ScrollWheel") < 0) {
-						Camera.main.orthographicSize += 0.5f;
+						cameraDistance += 0.5f;
+						cameraDistance = Mathf.Clamp (cameraDistance, cameraMin, cameraMax);
+						Camera.main.orthographicSize = cameraDistance;
 				}
 			if (Input.GetAxis ("Mouse ScrollWheel") > 0) {
-					Camera.main.orthographicSize -= 0.5f;
+					cameraDistance -= 0.5f;
+					cameraDistance = Mathf.Clamp (cameraDistance, cameraMin, cameraMax);
+					Camera.main.orthographicSize = cameraDistance;
 				}
+			
 		}
 
 		
