@@ -270,12 +270,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grounded: 0
+  facingRight: 1
+  squeezed: 0
   groundCheck: {fileID: 90976966}
+  squeezeCheck: {fileID: 1855028291}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 4294966783
-  speedForce: 10
-  facingRight: 1
+  whatCanCrush:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!95 &121000409
 Animator:
   serializedVersion: 3
@@ -1384,6 +1388,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: f1c8ff72783afa245a48f0d6488e9bb7, type: 2}
+      propertyPath: squeezeCheck
+      value: 
+      objectReference: {fileID: 1855028291}
+    - target: {fileID: 11400004, guid: f1c8ff72783afa245a48f0d6488e9bb7, type: 2}
+      propertyPath: whatCanCrush.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1c8ff72783afa245a48f0d6488e9bb7, type: 2}
   m_RootGameObject: {fileID: 121000406}
@@ -1398,9 +1410,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1855028291}
   - 58: {fileID: 1855028293}
-  - 114: {fileID: 1855028292}
   m_Layer: 9
-  m_Name: DeathCheck
+  m_Name: SqueezeCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1418,18 +1429,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 121000407}
   m_RootOrder: 1
---- !u!114 &1855028292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1855028290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54d412ae9f4e78144a398085bf7f8b8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathCollided: 1
 --- !u!58 &1855028293
 CircleCollider2D:
   m_ObjectHideFlags: 0
