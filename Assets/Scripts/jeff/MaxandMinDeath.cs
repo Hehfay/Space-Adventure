@@ -11,6 +11,7 @@ public class MaxandMinDeath : MonoBehaviour {
 	// Use this for initialization
 	void Start () {	
 	  maxArea = Max.x * Max.y;
+		minArea = Min.x * Min.y;
 	}
 	
 	// Update is called once per frame
