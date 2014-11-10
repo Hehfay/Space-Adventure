@@ -4,7 +4,7 @@
 // is referenced and manipulated whenever the character is running
 // jumping or crouching.
 // 
-// -Written by Isaac Meisner
+// -Written by Isaac Mei sner
 
 using UnityEngine;
 using System.Collections;
