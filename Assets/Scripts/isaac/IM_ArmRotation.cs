@@ -39,7 +39,7 @@ public class IM_ArmRotation : MonoBehaviour {
     if( ( theta > 90 || theta < -90) && player.facingRight )
     {
       //Flip left
-      transform.localScale = new Vector3(  -scaleOfArm,  scaleOfArm, 1);
+      transform.localScale = new Vector3(  -scaleOfArm,  -scaleOfArm, 1);
 
       player.transform.localScale = new Vector3( -scaleOfPlayer
                                                , scaleOfPlayer
