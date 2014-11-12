@@ -22,3 +22,4 @@ Space-Adventure
 <a> https://docs.google.com/document/d/1iKcOgg8XzHUD1LCj1F863bMzTQYsA97TVT5PZNRnyXo/edit </a> <br>
 <h5> Issues will be tracked using Github </h5>
 
+<a href="http://hehfay.github.io/Space-Adventure/">http://hehfay.github.io/Space-Adventure/</a>
