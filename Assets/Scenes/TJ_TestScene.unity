@@ -283,7 +283,7 @@ MonoBehaviour:
     m_Bits: 4294966783
   whatCanCrush:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294966783
   healthText: {fileID: 218636175}
 --- !u!95 &121000409
 Animator:
