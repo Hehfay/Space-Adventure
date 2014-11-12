@@ -14,20 +14,28 @@ public class IM_PlayerMovement : MonoBehaviour {
 	Animator anim;								//a value to represent our Animator
 	public bool grounded;						//to check ground and to have a jumpforce we can change in the editor
 	public bool facingRight = true;
-	public bool squeezed;
+	public bool squeezedL;
+	public bool squeezedR;
 	public Transform groundCheck;
-	public Transform squeezeCheck;
+	public Transform squeezeCheckL;
+	public Transform squeezeCheckR;
 	public LayerMask whatIsGround;
 	public LayerMask whatCanCrush;
 	float groundRadius = 0.1f;
 	float squeezeRadius = 0.15f;
 	float jumpForce = 725f;
+	float sprintJumpLength = 100f;
+	float sprintJumpHeight = 100f;
 	float walkingIncrement = 0.09f;
 	float sprintingIncrement = 0.1f;
+	public GUIText healthText;
+	private int healthCount;
 
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent <Animator>();
+		healthCount = 10;
+		SetHealthText ();
 	}
 	
 	void FixedUpdate () {
@@ -37,10 +45,12 @@ public class IM_PlayerMovement : MonoBehaviour {
 		anim.SetBool ("Ground", grounded);								//set ground in our Animator to match grounded
 
 		//Squeeze Check
-		squeezed = Physics2D.OverlapCircle (squeezeCheck.position, squeezeRadius, whatCanCrush);
+		squeezedL = Physics2D.OverlapCircle (squeezeCheckL.position, squeezeRadius, whatCanCrush);
+		squeezedR = Physics2D.OverlapCircle (squeezeCheckR.position, squeezeRadius, whatCanCrush);
 		//anim.SetBool ("Squeezed", squeezed);
-		if(squeezed)
-			Debug.Log (squeezed);
+		if (squeezedL && squeezedR) {
+						Destroy(gameObject);
+				}
 		
 		//Moving
 		anim.SetBool ("Moving", false);									//Initialize the Moving animation
@@ -80,6 +90,17 @@ public class IM_PlayerMovement : MonoBehaviour {
 			//transform.position = pos;
 		}
 
+		//Sprinting then Jumping
+		//If the character is on the ground and sprinting, add large upward force
+		if (grounded && (Input.GetKeyDown(KeyCode.Space) && Input.GetKey (KeyCode.LeftShift) && (Input.GetKey ("a") || Input.GetKey ("d")))) {
+			anim.SetBool ("Ground", false);
+			if(facingRight){
+				rigidbody2D.AddForce (new Vector2 (sprintJumpLength, sprintJumpHeight));
+			}
+			if (!facingRight){
+				rigidbody2D.AddForce (new Vector2(-sprintJumpLength, sprintJumpHeight));
+			}
+		}
 
 		//Jumping
 		//If we are on the ground and up was pressed, change our ground state and add an upward force
@@ -87,55 +108,42 @@ public class IM_PlayerMovement : MonoBehaviour {
 			anim.SetBool ("Ground", false);
 			rigidbody2D.AddForce (new Vector2 (0, jumpForce));
 		}
+
 		
 		//Crouching
-		anim.SetBool ("Crouch", false);		
-		if (Input.GetKey("s")) {
-			anim.SetBool ("Crouch", true);
-		}
+		//anim.SetBool ("Crouch", false);		
+		//if (Input.GetKey("s")) {
+		//	anim.SetBool ("Crouch", true);
+		//}
 		
 		//Crouch Walking Right
-		if (Input.GetKey("s") && Input.GetKey("d")) {
+		//if (Input.GetKey("s") && Input.GetKey("d")) {
 			//Crouch walking animation
 			/*
 			 * pos.x += walkingIncrement;
 			 * transform.position = pos;
 			 */
-		}
-		if(Input.GetKey("s") && Input.GetKey("a")){
+		//}
+		//if(Input.GetKey("s") && Input.GetKey("a")){
 			//Crouch walking animation
 			/*
 			 * pos.x -= walkingIncrement;
 			 * transform.position = pos;
 			 */
+		//}
+
+	}
+		
+
+	void SetHealthText(){
+			healthText.text = "Health: " + healthCount.ToString ();
 		}
 
-	}
-			
-	// Update is called once per frame
-	void Update(){
+	void OnTriggerEnter(Collider other){
+				if (other.gameObject.tag == "Bullet") {
+						healthCount -= 1;
+						SetHealthText ();
+				}
+		}
 
-	}
-
-	/*public void flipLeft(){
-		facingRight = false;
-		Vector3 theScale = transform.localScale;
-		theScale.x = -scaleOfPlayer;
-		Vector3 pos = transform.position;
-		pos.x -=  positionShift;
-		transform.position = pos;
-		transform.localScale = theScale;
-		Debug.Log ("Flip left");
-	}
-	public void flipRight(){
-		facingRight = true;
-		Vector3 theScale = transform.localScale; 
-		theScale.x = scaleOfPlayer;
-		Vector3 pos = transform.position;
-		pos.x +=  positionShift;
-		transform.position = pos;
-		transform.localScale = theScale;
-		Debug.Log ("Flip Right");
-
-	}*/
 }
