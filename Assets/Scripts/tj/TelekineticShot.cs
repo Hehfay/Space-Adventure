@@ -5,6 +5,7 @@ public class TelekineticShot : MonoBehaviour {
 
 	public float fireRate=0;
 	public LayerMask whatToHit;
+	public bool DebugShot; //Debug On/Off
 	float timeToFire=0;
 	Transform firePoint;
 	
@@ -12,7 +13,9 @@ public class TelekineticShot : MonoBehaviour {
 	void Awake() {
 		firePoint=transform.FindChild("FirePoint");
 		if (firePoint==null){
-			Debug.LogError ("No Fire Point!!!");
+			if(DebugShot==true){
+				Debug.LogError ("No Fire Point!!!");
+				}
 		}
 		
 	}
@@ -47,23 +50,37 @@ public class TelekineticShot : MonoBehaviour {
 	// Move Function
 	
 	void ShootMove(){
-		Debug.Log("test:Move");
+		if(DebugShot){
+			Debug.Log("test:Move");
+		}
 		Vector2 mousePosition = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x,Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
 		Vector2 firePointPosition = new Vector2(firePoint.position.x,firePoint.position.y);
 		Vector2 p;
 		Vector2 s;
 		RaycastHit2D hit = Physics2D.Raycast(firePointPosition,mousePosition-firePointPosition, 100, whatToHit);
-		Debug.DrawLine(firePointPosition, (mousePosition-firePointPosition) *100);
+		if(DebugShot == true){
+			Debug.DrawLine(firePointPosition, (mousePosition-firePointPosition) *100);
+		}
 		if (hit.collider != null){
-			Debug.DrawLine(firePointPosition,hit.point,Color.blue);
-			Debug.Log("Hit:"+hit.collider.name);
-			p = hit.collider.gameObject.transform.localPosition;
-			s =hit.collider.gameObject.transform.localScale;
+			if(hit.collider.gameObject.layer == 10){
+				if(DebugShot==true){
+					Debug.DrawLine(firePointPosition,hit.point,Color.blue);
+					Debug.Log("Hit:"+hit.collider.name);
+					}
+			}
+			else{
+				if(DebugShot==true){
+					Debug.DrawLine(firePointPosition,hit.point,Color.blue);
+					Debug.Log("Hit:"+hit.collider.name);
+				}
+				p = hit.collider.gameObject.transform.localPosition;
+				s =hit.collider.gameObject.transform.localScale;
 
-			if (p.x - mousePosition.x <= 0.8 *s.x && p.x - mousePosition.x >=-0.8 * s.x ){
-				if (p.y - mousePosition.y <= 0.8 *s.y && p.y - mousePosition.y >=-0.8 * s.y ){
-					hit.collider.gameObject.transform.localPosition = mousePosition;
+				if (p.x - mousePosition.x <= 0.8 *s.x && p.x - mousePosition.x >=-0.8 * s.x ){
+					if (p.y - mousePosition.y <= 0.8 *s.y && p.y - mousePosition.y >=-0.8 * s.y ){
+						hit.collider.gameObject.transform.localPosition = mousePosition;
 			
+					}
 				}
 			}
 		}
