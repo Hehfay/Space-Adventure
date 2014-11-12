@@ -48,7 +48,8 @@ public class DT_BulletMovement : MonoBehaviour {
 		//Destroy Bullets
 
 		if (gameObject.collider2D == true){
-			//	Destroy (gameObject);
+			Destroy (gameObject);
+			sourceAI.bulletCounter--;
 		}
 
 	}

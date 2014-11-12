@@ -408,7 +408,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &352542568
 Renderer:
   m_ObjectHideFlags: 0
@@ -461,7 +461,7 @@ Transform:
   m_PrefabInternal: {fileID: 1980170344}
   m_GameObject: {fileID: 352542567}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.407480121, y: .175061226, z: 0}
+  m_LocalPosition: {x: .221801162, y: .175061226, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 315191508}
@@ -479,13 +479,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletCounter: 0
-  BulletPrefab: {fileID: 100000, guid: c2f68c8c05fecd44798532669799988f, type: 2}
+  BulletPrefab: {fileID: 100000, guid: dcd156c25d015c34eabadb46f44d9748, type: 2}
   fireTo: {fileID: 100004, guid: f1c8ff72783afa245a48f0d6488e9bb7, type: 2}
   whatToHit:
     serializedVersion: 2
     m_Bits: 4294967035
   currentDirection: 1
-  enemyAlertStatus: 1
+  enemyAlertStatus: 2
 --- !u!61 &352542573
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -521,7 +521,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: df0045c881a0b5a42a078916945f4091, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -.134457245
+      value: .809895158
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: df0045c881a0b5a42a078916945f4091, type: 2}
       propertyPath: m_LocalPosition.y
@@ -779,6 +779,18 @@ Prefab:
     - target: {fileID: 11400000, guid: e9cb12534d7bd6640a288b3dde8478d3, type: 2}
       propertyPath: enemyAlertStatus
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: e9cb12534d7bd6640a288b3dde8478d3, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 2300000, guid: e9cb12534d7bd6640a288b3dde8478d3, type: 2}
+      propertyPath: m_UseLightProbes
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e9cb12534d7bd6640a288b3dde8478d3, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -1239,7 +1251,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1187044197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1674,7 +1686,7 @@ Transform:
   m_PrefabInternal: {fileID: 406390214}
   m_GameObject: {fileID: 1253086035}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.134457245, y: 2.57230949, z: 0}
+  m_LocalPosition: {x: .809895158, y: 2.57230949, z: 0}
   m_LocalScale: {x: 10, y: 1, z: 1}
   m_Children:
   - {fileID: 1076272399}
@@ -2149,7 +2161,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: e9cb12534d7bd6640a288b3dde8478d3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -.407480121
+      value: .221801162
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e9cb12534d7bd6640a288b3dde8478d3, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2185,7 +2197,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: e9cb12534d7bd6640a288b3dde8478d3, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: e9cb12534d7bd6640a288b3dde8478d3, type: 2}
+      propertyPath: BulletPrefab
+      value: 
+      objectReference: {fileID: 100000, guid: dcd156c25d015c34eabadb46f44d9748, type: 2}
+    - target: {fileID: 11400000, guid: e9cb12534d7bd6640a288b3dde8478d3, type: 2}
+      propertyPath: currentDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: e9cb12534d7bd6640a288b3dde8478d3, type: 2}
+      propertyPath: enemyAlertStatus
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e9cb12534d7bd6640a288b3dde8478d3, type: 2}
