@@ -588,7 +588,7 @@ MonoBehaviour:
     m_Bits: 4294966783
   whatCanCrush:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294966783
   healthText: {fileID: 13200000}
 --- !u!114 &11400004
 MonoBehaviour:
