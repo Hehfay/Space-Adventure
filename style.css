@@ -10,7 +10,7 @@ h1 {
 
 h4 {
   text-align:center;
-  color: gray;
+  color: orange;
 }
 
 li {
@@ -18,7 +18,7 @@ li {
 }
 
 ul li{
-  color:gray;
+  color:orange;
 }
 
 #circle {
@@ -41,6 +41,7 @@ div img {
 
 div p {
 	margin-left: 15px;
+	color:orange;
 }
 
 #dtPadding{
