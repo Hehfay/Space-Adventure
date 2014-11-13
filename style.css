@@ -31,14 +31,14 @@ ul li{
 	border: 2px solid black;
 }
 
-img {
+div{
+	display: inline-block;
+}
+
+div img {
   height:100px;
 	width:100px;
 	border-radius:100%;
-}
-
-div{
-	display: inline-block;
 }
 
 div p {
