@@ -10,16 +10,12 @@ h1 {
 
 h2{
 	color:orange;
+	margin:center;
 }
 
 h4 {
   text-align:center;
   color: orange;
-}
-
-li {
-  text-size: 18px;
-  color:orange;
 }
 
 ul li{
