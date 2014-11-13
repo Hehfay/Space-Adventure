@@ -5,14 +5,12 @@ title {
 h1 {
   text-align: center;
   font-family:Impact;
-}
-
-body {
-  background-color: orange;
+  color: orange;
 }
 
 h4 {
   text-align:center;
+  color: gray;
 }
 
 li {
