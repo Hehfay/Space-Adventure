@@ -24,7 +24,6 @@ ul li{
 }
 
 #circle {
-  display: inline-block;
 	margin-left: 5px;
 	height:100px;
 	width:100px;
@@ -37,6 +36,8 @@ img {
 	width:100px;
 	border-radius:100%;
 }
-  
+
+div{
+	display: inline-block;
 }
 
