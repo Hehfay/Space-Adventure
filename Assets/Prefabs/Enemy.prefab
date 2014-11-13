@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.407480121, y: .175061226, z: 0}
+  m_LocalPosition: {x: 1.43151188, y: .384814948, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -97,14 +97,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552c7420dc4b82c47929468c728e6c34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletCounter: 0
-  BulletPrefab: {fileID: 100000, guid: c2f68c8c05fecd44798532669799988f, type: 2}
+  BulletPrefab: {fileID: 100000, guid: dcd156c25d015c34eabadb46f44d9748, type: 2}
   fireTo: {fileID: 100004, guid: f1c8ff72783afa245a48f0d6488e9bb7, type: 2}
   whatToHit:
     serializedVersion: 2
     m_Bits: 4294967035
+  canShoot: 0
   currentDirection: 1
-  enemyAlertStatus: 1
+  enemyAlertStatus: 2
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -1,13 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DT_SpawnPlayer : MonoBehaviour {
-
-	public GameObject player;
+public class NewBehaviourScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		 Instantiate(player,transform.position,Quaternion.identity);
+	
 	}
 	
 	// Update is called once per frame
