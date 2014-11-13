@@ -47,3 +47,7 @@ div p {
 #dtPadding{
 	padding-left: 10px;
 }
+
+p {
+	color:orange;
+}
