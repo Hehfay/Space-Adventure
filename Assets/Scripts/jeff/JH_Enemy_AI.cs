@@ -92,18 +92,14 @@ public class JH_Enemy_AI : MonoBehaviour
   void rayCollision(RaycastHit2D lineOfSight){
     if( lineOfSight.collider != null )
     {
-      if( lineOfSight.collider.tag == "Cover" ){
-        Debug.Log("Cover was in line of sight");
-      }
       if( lineOfSight.collider.tag == "Player" ){ //If enemy sees the player go into attack mode
         enemyAlertStatus = alertStatus.attacking;  
-        Debug.Log("Player in line of sight");
       }
+			else{
+        enemyAlertStatus = alertStatus.patrolling;  
+			}
     }
-    else{
-      Debug.Log ("Nothing in line of sight.");
-    } 
-  }
+  } 
 
   void changeDirection(){
     if( currentDirection == directions.left ){
