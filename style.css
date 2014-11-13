@@ -41,3 +41,7 @@ div{
 	display: inline-block;
 }
 
+div p {
+	margin-left: 5px;
+}
+
