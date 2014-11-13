@@ -106,6 +106,9 @@ Transform:
   m_Children:
   - {fileID: 975843029}
   - {fileID: 1995686972}
+  - {fileID: 1653171927}
+  - {fileID: 1446963226}
+  - {fileID: 1189687478}
   m_Father: {fileID: 0}
   m_RootOrder: 1
 --- !u!95 &13035523
@@ -136,6 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614befe1a74d4194ba706c60fba595d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ActiveGunText: {fileID: 0}
 --- !u!61 &13035525
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -158,7 +162,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: 5
+  m_GravityScale: 3
   m_FixedAngle: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -200,12 +204,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grounded: 0
+  facingRight: 1
+  squeezedL: 0
+  squeezedR: 0
   groundCheck: {fileID: 975843029}
+  squeezeCheckL: {fileID: 1446963226}
+  squeezeCheckR: {fileID: 1653171927}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 4294966783
-  speedForce: 10
-  facingRight: 1
+  whatCanCrush:
+    serializedVersion: 2
+    m_Bits: 4294964735
+  healthText: {fileID: 1189687479}
 --- !u!1 &15816824
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,12 +489,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552c7420dc4b82c47929468c728e6c34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletCounter: 0
   BulletPrefab: {fileID: 100000, guid: dcd156c25d015c34eabadb46f44d9748, type: 2}
   fireTo: {fileID: 100004, guid: f1c8ff72783afa245a48f0d6488e9bb7, type: 2}
   whatToHit:
     serializedVersion: 2
     m_Bits: 4294967035
+  canShoot: 0
   currentDirection: 1
   enemyAlertStatus: 2
 --- !u!61 &352542573
@@ -1081,6 +1092,7 @@ MonoBehaviour:
   whatToHit:
     serializedVersion: 2
     m_Bits: 4294965755
+  DebugShot: 0
 --- !u!114 &1059550220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1306,12 +1318,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552c7420dc4b82c47929468c728e6c34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletCounter: 0
   BulletPrefab: {fileID: 100000, guid: c2f68c8c05fecd44798532669799988f, type: 2}
   fireTo: {fileID: 100004, guid: f1c8ff72783afa245a48f0d6488e9bb7, type: 2}
   whatToHit:
     serializedVersion: 2
     m_Bits: 4294967035
+  canShoot: 0
   currentDirection: 1
   enemyAlertStatus: 2
 --- !u!23 &1187044202
@@ -1463,6 +1475,58 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!1 &1189687477
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100018, guid: f1c8ff72783afa245a48f0d6488e9bb7, type: 2}
+  m_PrefabInternal: {fileID: 264606582}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1189687478}
+  - 132: {fileID: 1189687479}
+  m_Layer: 0
+  m_Name: Health Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1189687478
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400018, guid: f1c8ff72783afa245a48f0d6488e9bb7, type: 2}
+  m_PrefabInternal: {fileID: 264606582}
+  m_GameObject: {fileID: 1189687477}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .02253782, y: .123957708, z: 0}
+  m_LocalScale: {x: .281722754, y: .281722069, z: 1}
+  m_Children: []
+  m_Father: {fileID: 13035522}
+  m_RootOrder: 4
+--- !u!132 &1189687479
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 13200000, guid: f1c8ff72783afa245a48f0d6488e9bb7,
+    type: 2}
+  m_PrefabInternal: {fileID: 264606582}
+  m_GameObject: {fileID: 1189687477}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: Gui Text
+  m_Anchor: 0
+  m_Alignment: 0
+  m_PixelOffset: {x: 0, y: 0}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Material: {fileID: 0}
+  m_FontSize: 0
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_PixelCorrect: 1
+  m_RichText: 1
 --- !u!1 &1222268179
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,12 +1686,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552c7420dc4b82c47929468c728e6c34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletCounter: 0
   BulletPrefab: {fileID: 100000, guid: c2f68c8c05fecd44798532669799988f, type: 2}
   fireTo: {fileID: 100004, guid: f1c8ff72783afa245a48f0d6488e9bb7, type: 2}
   whatToHit:
     serializedVersion: 2
     m_Bits: 4294967035
+  canShoot: 0
   currentDirection: 0
   enemyAlertStatus: 2
 --- !u!23 &1226583696
@@ -1836,6 +1900,46 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1253086036}
   m_RootOrder: 1
+--- !u!1 &1446963225
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100014, guid: f1c8ff72783afa245a48f0d6488e9bb7, type: 2}
+  m_PrefabInternal: {fileID: 264606582}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1446963226}
+  - 58: {fileID: 1446963227}
+  m_Layer: 9
+  m_Name: SqueezeCheckL
+  m_TagString: Untagged
+  m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1446963226
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400014, guid: f1c8ff72783afa245a48f0d6488e9bb7, type: 2}
+  m_PrefabInternal: {fileID: 264606582}
+  m_GameObject: {fileID: 1446963225}
+  m_LocalRotation: {x: .00330899842, y: 0, z: 0, w: .999994516}
+  m_LocalPosition: {x: -.0893596932, y: .0041630757, z: .00306800008}
+  m_LocalScale: {x: .0399999991, y: .0399999991, z: .0399999991}
+  m_Children: []
+  m_Father: {fileID: 13035522}
+  m_RootOrder: 3
+--- !u!58 &1446963227
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800002, guid: f1c8ff72783afa245a48f0d6488e9bb7,
+    type: 2}
+  m_PrefabInternal: {fileID: 264606582}
+  m_GameObject: {fileID: 1446963225}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .25
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1574392172
 GameObject:
   m_ObjectHideFlags: 0
@@ -2004,6 +2108,7 @@ MonoBehaviour:
   whatToHit:
     serializedVersion: 2
     m_Bits: 4294966779
+  DebugShot: 0
 --- !u!1001 &1612933046
 Prefab:
   m_ObjectHideFlags: 0
@@ -2048,6 +2153,46 @@ Prefab:
   m_RootGameObject: {fileID: 539945648}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1653171926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100016, guid: f1c8ff72783afa245a48f0d6488e9bb7, type: 2}
+  m_PrefabInternal: {fileID: 264606582}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1653171927}
+  - 58: {fileID: 1653171928}
+  m_Layer: 9
+  m_Name: SqueezeCheckR
+  m_TagString: Untagged
+  m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1653171927
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400016, guid: f1c8ff72783afa245a48f0d6488e9bb7, type: 2}
+  m_PrefabInternal: {fileID: 264606582}
+  m_GameObject: {fileID: 1653171926}
+  m_LocalRotation: {x: .00330866408, y: 0, z: 0, w: .999994516}
+  m_LocalPosition: {x: -.0198308509, y: .00411006343, z: .00306837796}
+  m_LocalScale: {x: .0399999991, y: .0399999991, z: .0399999991}
+  m_Children: []
+  m_Father: {fileID: 13035522}
+  m_RootOrder: 2
+--- !u!58 &1653171928
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800004, guid: f1c8ff72783afa245a48f0d6488e9bb7,
+    type: 2}
+  m_PrefabInternal: {fileID: 264606582}
+  m_GameObject: {fileID: 1653171926}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .25
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &1686562088
 Prefab:
   m_ObjectHideFlags: 0
@@ -2211,6 +2356,10 @@ Prefab:
       propertyPath: enemyAlertStatus
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5000000, guid: e9cb12534d7bd6640a288b3dde8478d3, type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e9cb12534d7bd6640a288b3dde8478d3, type: 2}
   m_RootGameObject: {fileID: 352542567}
@@ -2268,7 +2417,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 3475736105
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300020, guid: dfbd5ddbd9b1a4e5e8d7e594be099a4d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2094962348
