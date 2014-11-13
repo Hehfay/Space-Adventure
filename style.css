@@ -8,6 +8,10 @@ h1 {
   color: orange;
 }
 
+h2{
+	color:orange;
+}
+
 h4 {
   text-align:center;
   color: orange;
@@ -15,6 +19,7 @@ h4 {
 
 li {
   text-size: 18px;
+  color:orange;
 }
 
 ul li{
@@ -44,8 +49,8 @@ div p {
 	color:orange;
 }
 
-#dtPadding{
-	padding-left: 10px;
+#text{
+	display:inline;
 }
 
 p {
