@@ -6,12 +6,13 @@ public class ShotScript : MonoBehaviour {
 	public float fireRate=0;
 	public LayerMask whatToHit;
 	float timeToFire=0;
+	public bool DebugShot; //Debug On/Off
 	Transform firePoint;
 	
 	
 	void Awake() {
 		firePoint=transform.FindChild("FirePoint");
-		if (firePoint==null){
+		if (firePoint==null && DebugShot==true){
 			Debug.LogError ("No Fire Point!!!");
 		}
 		
@@ -63,42 +64,76 @@ public class ShotScript : MonoBehaviour {
 	// Grow Function
 
 	void ShootGrow(){
-		Debug.Log("test");
+		if(DebugShot==true){
+			Debug.Log("test");
+		}
 		Vector2 mousePosition = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x,Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
 		Vector2 firePointPosition = new Vector2(firePoint.position.x,firePoint.position.y);
 		RaycastHit2D hit = Physics2D.Raycast(firePointPosition,mousePosition-firePointPosition, 100, whatToHit);
-		Debug.DrawLine(firePointPosition, (mousePosition-firePointPosition) *100);
+		if(DebugShot==true){
+			Debug.DrawLine(firePointPosition, (mousePosition-firePointPosition) *100);
+		}
 		if (hit.collider != null){
-			Debug.DrawLine(firePointPosition,hit.point,Color.red);
-			Debug.Log("Hit:"+hit.collider.name);
-			//collider.gameObject.transform.localScale = new Vector3(transform.localScale.x * 1.5f, transform.localScale.y * 1.5f,0f);
-			Vector3 s = hit.collider.gameObject.transform.localScale;
-			s.x += .1f;
-			s.y += .1f;
-			hit.collider.gameObject.transform.localScale = s;
-			//collider.gameObject.transform.localScale.y += 0.5f;
+			if (hit.collider.gameObject.layer == 10){
+				if(DebugShot == true){
+					Debug.DrawLine(firePointPosition,hit.point,Color.red);
+					Debug.Log("Hit:"+hit.collider.name);
+					}
+			}
+			else{
+				if(DebugShot==true){
+					Debug.DrawLine(firePointPosition,hit.point,Color.red);
+					Debug.Log("Hit:"+hit.collider.name);
+				}
+				//Upscale
+				MaxAndMinSize max = hit.collider.GetComponent<MaxAndMinSize>();
+				Vector3 s = hit.collider.gameObject.transform.localScale;
+				if(max.Max.x > s.x && max.Max.y > s.y){
+					s.x += .1f;
+					s.y += .1f;
+					hit.collider.gameObject.transform.localScale = s;
+					//Increases Object Mass
+					hit.collider.GetComponent<Rigidbody2D>().mass += .1f;
+				}
+			}
 		}
 	}
 
 	// Shrink Function
 
 	void ShootShrink(){
-		Debug.Log("test");
+		if(DebugShot==true){
+			Debug.Log("test");
+		}
 		Vector2 mousePosition = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x,Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
 		Vector2 firePointPosition = new Vector2(firePoint.position.x,firePoint.position.y);
 		RaycastHit2D hit = Physics2D.Raycast(firePointPosition,mousePosition-firePointPosition, 100, whatToHit);
-		Debug.DrawLine(firePointPosition, (mousePosition-firePointPosition) *100);
+		if(DebugShot==true){
+			Debug.DrawLine(firePointPosition, (mousePosition-firePointPosition) *100);
+		}
 		if (hit.collider != null){
-			Debug.DrawLine(firePointPosition,hit.point,Color.green);
-			Debug.Log("Hit:"+hit.collider.name);
-
-			if ( hit.collider.gameObject.transform.localScale.x > .2 && hit.collider.gameObject.transform.localScale.y > .2){
+			if (hit.collider.gameObject.layer == 10){
+				if(DebugShot==true){
+					Debug.DrawLine(firePointPosition,hit.point,Color.green);
+					Debug.Log("Hit:"+hit.collider.name);
+					}
+			}
+			else{
+				if(DebugShot==true){
+					Debug.DrawLine(firePointPosition,hit.point,Color.green);
+					Debug.Log("Hit:"+hit.collider.name);
+				}
+				//DownScales
+				MaxAndMinSize min = hit.collider.GetComponent<MaxAndMinSize>();
 				Vector3 s = hit.collider.gameObject.transform.localScale;
-				s.x -= .1f;
-				s.y -= .1f;
-				hit.collider.gameObject.transform.localScale = s;
+				if(min.Min.x < s.x && min.Min.y < s.y){
+					s.x -= .1f;
+					s.y -= .1f;
+					hit.collider.gameObject.transform.localScale = s;
+					//Decreases Object Mass
+					hit.collider.GetComponent<Rigidbody2D>().mass -= .1f;
+				}
 			}
 		}
 	}
-	
 }

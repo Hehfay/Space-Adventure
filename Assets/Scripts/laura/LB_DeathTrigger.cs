@@ -16,7 +16,8 @@ public class LB_DeathTrigger : MonoBehaviour {
 	public void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.collider2D.tag == "Player") {
-			Debug.Log("You are dead.");
+			//Debug.Log("You are dead.");
+			Application.LoadLevel(Application.loadedLevel);
 
 				}
 	}
