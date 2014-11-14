@@ -139,11 +139,19 @@ public class IM_PlayerMovement : MonoBehaviour {
 			healthText.text = "Health: " + healthCount.ToString ();
 		}
 
-	void OnTriggerEnter(Collider other){
+	void OnTriggerEnter2D(Collider2D other){
 				if (other.gameObject.tag == "Bullet") {
-						healthCount -= 1;
+						healthCount--;
 						SetHealthText ();
+//						other.gameObject.SetActive( false );
+						Destroy( other.gameObject );
 				}
+				if (other.gameObject.tag == "Pickup") {
+						other.gameObject.SetActive (false);
+				}
+					
+
 		}
+
 
 }
