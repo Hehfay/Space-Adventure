@@ -35,6 +35,10 @@ public class DT_BulletMovement : MonoBehaviour {
 
     pos = pos + speed*direction;
     transform.position = pos;
+
+
+		// Using on collision 2d, 
+		// set canShoot back to true.
   
 
 
@@ -46,4 +50,9 @@ public class DT_BulletMovement : MonoBehaviour {
  // }
 
   }
+
+	void OnTriggerEnter2D( Collider2D other ){			
+		sourceAI.canShoot = true;
+	}
+
 }

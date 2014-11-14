@@ -71,8 +71,9 @@ public class JH_Enemy_AI : MonoBehaviour
     }
 
     // Find the player game object
-    fireTo = GameObject.FindWithTag( "Player" );
+//    fireTo = GameObject.FindWithTag( "Player" );
     canShoot = true;
+    fireTo = GameObject.FindWithTag( "Player" );
   }
 
   // Called on fixed intervals
@@ -94,6 +95,7 @@ public class JH_Enemy_AI : MonoBehaviour
     {
       if( lineOfSight.collider.tag == "Player" ){ //If enemy sees the player go into attack mode
         enemyAlertStatus = alertStatus.attacking;  
+				Shoot();
       }
 			else{
         enemyAlertStatus = alertStatus.patrolling;  
@@ -139,7 +141,7 @@ public class JH_Enemy_AI : MonoBehaviour
     switch ( enemyAlertStatus )
     {
       case alertStatus.attacking:
-        lineOfSight = Physics2D.Raycast ( transform.position
+/*        lineOfSight = Physics2D.Raycast ( transform.position
                                         ,  fireTo.transform.position
                                         , 10
                                         , whatToHit );
@@ -147,12 +149,12 @@ public class JH_Enemy_AI : MonoBehaviour
         Debug.DrawLine ( transform.position
                         , fireTo.transform.position
                         , Color.red );
-
-        if( lineOfSight.collider.tag == "Player" )
-        {
-          Shoot();
-        }
-        break;
+*/
+//        if( lineOfSight.collider.tag == "Player" )
+ //       {
+  //        Shoot();
+   //     }
+ //       break;
       case alertStatus.standing:
       case alertStatus.casualPatrol:
       case alertStatus.patrolling:
@@ -177,8 +179,9 @@ public class JH_Enemy_AI : MonoBehaviour
 
       bulletScript.sourceAI = this;
 
-      bulletScript.direction = fireTo.transform.position;
-      bulletScript.speed = 0.05f;
+			bulletScript.direction = transform.TransformDirection( currentDirectionVector );
+//      bulletScript.direction = fireTo.transform.position;
+      bulletScript.speed = 0.25f;
     }  
   }
 } /* END OF FILE */
