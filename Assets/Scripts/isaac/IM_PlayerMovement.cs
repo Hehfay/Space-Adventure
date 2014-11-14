@@ -4,7 +4,7 @@
 // animator is referenced and manipulated whenever the character is 
 // running, jumping or crouching.
 // 
-// -Written by Isaac Mei sner
+// -Written by Isaac Meisner
 
 using UnityEngine;
 using System.Collections;
@@ -30,11 +30,17 @@ public class IM_PlayerMovement : MonoBehaviour {
 	float sprintingIncrement = 0.1f;
 	public GUIText healthText;
 	private int healthCount;
+	public GUIText pickupText;
+	private int pickupCount;
+	//public DT_DemoDoor respawn;
+	//Vector3 spawnPoint;
+	public int levelNumber = 3;
 
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent <Animator>();
 		healthCount = 10;
+		pickupCount = 0;
 		SetHealthText ();
 	}
 	
@@ -44,12 +50,35 @@ public class IM_PlayerMovement : MonoBehaviour {
 		grounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);	//set our grounded bool
 		anim.SetBool ("Ground", grounded);								//set ground in our Animator to match grounded
 
+		//Sprinting then Jumping
+		//If the character is on the ground and sprinting, add large upward force
+		if (grounded && (Input.GetKeyDown(KeyCode.Space) && Input.GetKey (KeyCode.LeftShift) && (Input.GetKey ("a") || Input.GetKey ("d")))) {
+			anim.SetBool ("Ground", false);
+			if(facingRight){
+				rigidbody2D.AddForce (new Vector2 (sprintJumpLength, sprintJumpHeight));
+			}
+			if (!facingRight){
+				rigidbody2D.AddForce (new Vector2(-sprintJumpLength, sprintJumpHeight));
+			}
+		}
+
+		//Jumping
+		//If we are on the ground and up was pressed, change our ground state and add an upward force
+		if (grounded && (Input.GetKeyDown (KeyCode.Space) || Input.GetKeyDown ("w"))) {
+			anim.SetBool ("Ground", false);
+			rigidbody2D.AddForce (new Vector2 (0, jumpForce));
+		}
+
+		//spawnPoint.Set (-6.06003f, -1.113014f, 0.0f);
 		//Squeeze Check
 		squeezedL = Physics2D.OverlapCircle (squeezeCheckL.position, squeezeRadius, whatCanCrush);
 		squeezedR = Physics2D.OverlapCircle (squeezeCheckR.position, squeezeRadius, whatCanCrush);
 		//anim.SetBool ("Squeezed", squeezed);
 		if (squeezedL && squeezedR) {
-						Destroy(gameObject);
+			renderer.enabled = false;
+			Application.LoadLevel(levelNumber);
+			//transform.position = spawnPoint;
+			//renderer.enabled = true;
 				}
 		
 		//Moving
@@ -90,25 +119,6 @@ public class IM_PlayerMovement : MonoBehaviour {
 			//transform.position = pos;
 		}
 
-		//Sprinting then Jumping
-		//If the character is on the ground and sprinting, add large upward force
-		if (grounded && (Input.GetKeyDown(KeyCode.Space) && Input.GetKey (KeyCode.LeftShift) && (Input.GetKey ("a") || Input.GetKey ("d")))) {
-			anim.SetBool ("Ground", false);
-			if(facingRight){
-				rigidbody2D.AddForce (new Vector2 (sprintJumpLength, sprintJumpHeight));
-			}
-			if (!facingRight){
-				rigidbody2D.AddForce (new Vector2(-sprintJumpLength, sprintJumpHeight));
-			}
-		}
-
-		//Jumping
-		//If we are on the ground and up was pressed, change our ground state and add an upward force
-		if (grounded && (Input.GetKeyDown (KeyCode.Space) || Input.GetKeyDown ("w"))) {
-			anim.SetBool ("Ground", false);
-			rigidbody2D.AddForce (new Vector2 (0, jumpForce));
-		}
-
 		
 		//Crouching
 		//anim.SetBool ("Crouch", false);		
@@ -138,6 +148,9 @@ public class IM_PlayerMovement : MonoBehaviour {
 	void SetHealthText(){
 			healthText.text = "Health: " + healthCount.ToString ();
 		}
+	void SetPickupText(){
+			pickupText.text = "Pickups: " + pickupCount.ToString ();
+		}
 
 	void OnTriggerEnter2D(Collider2D other){
 				if (other.gameObject.tag == "Bullet") {
@@ -151,6 +164,7 @@ public class IM_PlayerMovement : MonoBehaviour {
 				}
 				if (other.gameObject.tag == "Pickup") {
 						other.gameObject.SetActive (false);
+						pickupCount++;
 				}
 					
 
