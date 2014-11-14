@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24d33f1e33c1eb047b3f6f19b1d10147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Max: {x: 6, y: 6}
+  Max: {x: 4.5, y: 4.5}
   Min: {x: .5, y: .5}
 --- !u!61 &13068050
 BoxCollider2D:
@@ -285,7 +285,7 @@ Transform:
   m_GameObject: {fileID: 101311802}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.52741623, y: -3.70627379, z: 0}
-  m_LocalScale: {x: 3.91657472, y: .81222558, z: 1}
+  m_LocalScale: {x: 3.50261188, y: .81222558, z: 1}
   m_Children: []
   m_Father: {fileID: 1094152063}
   m_RootOrder: 2
@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Max: {x: 5, y: 1}
-  Min: {x: .349999994, y: .200000003}
+  Min: {x: .200000003, y: .200000003}
 --- !u!1 &232207232
 GameObject:
   m_ObjectHideFlags: 0
