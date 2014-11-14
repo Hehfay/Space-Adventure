@@ -16,19 +16,19 @@ public class MaxAndMinSize : MonoBehaviour {
 	
 	//Max Size
 		if(gameObject.transform.localScale.y >= Max.y-.1){
-			transform.localScale = Max;
+	//		transform.localScale = Max;
 		}
 		if(gameObject.transform.localScale.x >= Max.x-.1){
-			transform.localScale = Max;
+	//		transform.localScale = Max;
 		}
 	
 	//Min Size
 		if(gameObject.transform.localScale.y <= Min.y+.1){
-			gameObject.transform.localScale = Min;
+	//		gameObject.transform.localScale = Min;
 		}
 		
 		if(gameObject.transform.localScale.x <= Min.x+.1){
-			gameObject.transform.localScale = Min;
+	//		gameObject.transform.localScale = Min;
 		}
 	}
 }
