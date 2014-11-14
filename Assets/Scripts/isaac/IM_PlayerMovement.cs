@@ -4,7 +4,7 @@
 // animator is referenced and manipulated whenever the character is 
 // running, jumping or crouching.
 // 
-// -Written by Isaac Mei sner
+// -Written by Isaac Meisner
 
 using UnityEngine;
 using System.Collections;
@@ -32,6 +32,9 @@ public class IM_PlayerMovement : MonoBehaviour {
 	private int healthCount;
 	public GUIText pickupText;
 	private int pickupCount;
+	//public DT_DemoDoor respawn;
+	//Vector3 spawnPoint;
+	public int levelNumber = 3;
 
 	// Use this for initialization
 	void Start () {
@@ -66,12 +69,16 @@ public class IM_PlayerMovement : MonoBehaviour {
 			rigidbody2D.AddForce (new Vector2 (0, jumpForce));
 		}
 
+		//spawnPoint.Set (-6.06003f, -1.113014f, 0.0f);
 		//Squeeze Check
 		squeezedL = Physics2D.OverlapCircle (squeezeCheckL.position, squeezeRadius, whatCanCrush);
 		squeezedR = Physics2D.OverlapCircle (squeezeCheckR.position, squeezeRadius, whatCanCrush);
 		//anim.SetBool ("Squeezed", squeezed);
 		if (squeezedL && squeezedR) {
-						Destroy(gameObject);
+			renderer.enabled = false;
+			Application.LoadLevel(levelNumber);
+			//transform.position = spawnPoint;
+			//renderer.enabled = true;
 				}
 		
 		//Moving

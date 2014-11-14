@@ -14,4 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MPG Scenes/02_00P.unity
   - enabled: 1
+    path: Assets/Scenes/MPG Scenes/02_00P.unity
+  - enabled: 1
     path: Assets/Scenes/MPG Scenes/-02_00P.unity
