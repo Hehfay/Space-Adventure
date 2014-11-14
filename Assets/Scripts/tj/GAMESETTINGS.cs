@@ -22,6 +22,7 @@ public class GAMESETTINGS : MonoBehaviour {
 	
 		DontDestroyOnLoad(this);
 			  PreviousDoor = "none";
+			  CurrentScene ="00_00StartScene";
 
 	}
 }

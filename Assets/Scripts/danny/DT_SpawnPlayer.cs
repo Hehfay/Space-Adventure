@@ -12,7 +12,7 @@ public class DT_SpawnPlayer : MonoBehaviour {
 		
 		previousDoor=GAMESETTINGS.PreviousDoor;
 		if(GAMESETTINGS.CurrentScene=="00_00StartScene" && previousDoor =="none"){
-			Instantiate(player,transform.position,Quaternion.identity);
+		//	Instantiate(player,transform.position,Quaternion.identity);
 		}
 		else if(previousDoor != currentDoor && previousDoor!= "none"){
 			Instantiate(player,transform.position,Quaternion.identity);
