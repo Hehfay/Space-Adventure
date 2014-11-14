@@ -14,6 +14,7 @@ GameObject:
   - 50: {fileID: 5000000}
   - 61: {fileID: 6100000}
   - 114: {fileID: 11400004}
+  - 114: {fileID: 11400002}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
@@ -105,6 +106,19 @@ MonoBehaviour:
   canShoot: 0
   currentDirection: 1
   enemyAlertStatus: 2
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24d33f1e33c1eb047b3f6f19b1d10147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Max: {x: 2, y: 2}
+  Min: {x: .5, y: .5}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
