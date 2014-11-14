@@ -85,10 +85,16 @@ public class ShotScript : MonoBehaviour {
 					Debug.DrawLine(firePointPosition,hit.point,Color.red);
 					Debug.Log("Hit:"+hit.collider.name);
 				}
+				//Upscale
+				MaxAndMinSize max = hit.collider.GetComponent<MaxAndMinSize>();
 				Vector3 s = hit.collider.gameObject.transform.localScale;
-				s.x += .1f;
-				s.y += .1f;
-				hit.collider.gameObject.transform.localScale = s;
+				if(max.Max.x > s.x && max.Max.y > s.y){
+					s.x += .1f;
+					s.y += .1f;
+					hit.collider.gameObject.transform.localScale = s;
+					//Increases Object Mass
+					hit.collider.GetComponent<Rigidbody2D>().mass += .1f;
+				}
 			}
 		}
 	}
@@ -117,13 +123,17 @@ public class ShotScript : MonoBehaviour {
 					Debug.DrawLine(firePointPosition,hit.point,Color.green);
 					Debug.Log("Hit:"+hit.collider.name);
 				}
-
+				//DownScales
+				MaxAndMinSize min = hit.collider.GetComponent<MaxAndMinSize>();
 				Vector3 s = hit.collider.gameObject.transform.localScale;
-				s.x -= .1f;
-				s.y -= .1f;
-				hit.collider.gameObject.transform.localScale = s;
+				if(min.Min.x < s.x && min.Min.y < s.y){
+					s.x -= .1f;
+					s.y -= .1f;
+					hit.collider.gameObject.transform.localScale = s;
+					//Decreases Object Mass
+					hit.collider.GetComponent<Rigidbody2D>().mass -= .1f;
+				}
 			}
 		}
 	}
-	
 }
