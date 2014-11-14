@@ -205,7 +205,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 44e68e66b2d2e9444b931fc2571cf2db, type: 2}
       propertyPath: scene
-      value: 01_00E
+      value: 00_00StartScene
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 44e68e66b2d2e9444b931fc2571cf2db, type: 2}
       propertyPath: m_Name
@@ -424,7 +424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acc1dbfe92a33454491677137384b714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: 00_00StartScene
+  scene: 01_00E
   doorOrientation: left
 --- !u!50 &342507437
 Rigidbody2D:
@@ -796,7 +796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acc1dbfe92a33454491677137384b714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: 01_00E
+  scene: 00_00StartScene
   doorOrientation: right
 --- !u!50 &839527259
 Rigidbody2D:
@@ -1032,7 +1032,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 44e68e66b2d2e9444b931fc2571cf2db, type: 2}
       propertyPath: scene
-      value: 00_00StartScene
+      value: 01_00E
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 44e68e66b2d2e9444b931fc2571cf2db, type: 2}
       propertyPath: m_Name
