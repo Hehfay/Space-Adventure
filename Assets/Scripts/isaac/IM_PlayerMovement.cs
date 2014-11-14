@@ -145,6 +145,9 @@ public class IM_PlayerMovement : MonoBehaviour {
 						SetHealthText ();
 //						other.gameObject.SetActive( false );
 						Destroy( other.gameObject );
+						if( healthCount <= 0 ){
+							Destroy( gameObject );
+						}
 				}
 				if (other.gameObject.tag == "Pickup") {
 						other.gameObject.SetActive (false);
