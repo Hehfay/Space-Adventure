@@ -1078,7 +1078,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 100000, guid: c3c3eda613d6d6d488de068092179461, type: 2}
-  previousDoor: left
   currentDoor: right
 --- !u!4 &1653210372
 Transform:
