@@ -86,6 +86,7 @@ GameObject:
   - 23: {fileID: 13068051}
   - 61: {fileID: 13068050}
   - 114: {fileID: 13068049}
+  - 50: {fileID: 13068054}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -156,6 +157,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1094152063}
   m_RootOrder: 1
+--- !u!50 &13068054
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 13068048}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1001 &78866094
 Prefab:
   m_ObjectHideFlags: 0
@@ -232,6 +248,7 @@ GameObject:
   - 23: {fileID: 101311804}
   - 61: {fileID: 101311803}
   - 114: {fileID: 101311807}
+  - 50: {fileID: 101311808}
   m_Layer: 0
   m_Name: ImpeadingPlatform
   m_TagString: Untagged
@@ -302,6 +319,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Max: {x: 5, y: 1}
   Min: {x: .200000003, y: .200000003}
+--- !u!50 &101311808
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 101311802}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1 &232207232
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,6 +607,7 @@ GameObject:
   - 61: {fileID: 609258250}
   - 114: {fileID: 609258249}
   - 23: {fileID: 609258251}
+  - 50: {fileID: 609258253}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -645,6 +678,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 609258247}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!50 &609258253
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 609258247}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1 &733007800
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,6 +927,7 @@ GameObject:
   - 23: {fileID: 892759925}
   - 61: {fileID: 892759924}
   - 114: {fileID: 892759928}
+  - 50: {fileID: 892759929}
   m_Layer: 0
   m_Name: SlantedWall
   m_TagString: Untagged
@@ -949,6 +998,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Max: {x: 9, y: 1}
   Min: {x: .400000006, y: .100000001}
+--- !u!50 &892759929
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 892759923}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1 &898712316
 GameObject:
   m_ObjectHideFlags: 0
