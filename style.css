@@ -47,6 +47,7 @@ div p {
 
 #text{
 	display:inline;
+	float:right;
 }
 
 p {
