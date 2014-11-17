@@ -33,9 +33,8 @@ public class IM_PlayerMovement : MonoBehaviour {
 	private int healthCount;
 	public GUIText pickupText;
 	private int pickupCount;
-	//public DT_DemoDoor respawn;
-	//Vector3 spawnPoint;
-	public int levelNumber = 3;
+	public DT_SpawnPlayer reload;
+	public Transform playerInfo;
 
 	// Use this for initialization
 	void Start () {
@@ -67,7 +66,7 @@ public class IM_PlayerMovement : MonoBehaviour {
 		//If we are on the ground and up was pressed, change our ground state and add an upward force
 		if (grounded && (Input.GetKey (KeyCode.Space) || Input.GetKey ("w"))) {
 			anim.SetBool ("Ground", false);
-			isJumping = true;
+			//isJumping = true;
 			rigidbody2D.AddForce (new Vector2 (0, jumpForce));
 		}
 
@@ -78,9 +77,7 @@ public class IM_PlayerMovement : MonoBehaviour {
 		//anim.SetBool ("Squeezed", squeezed);
 		if (squeezedL && squeezedR) {
 			renderer.enabled = false;
-			Application.LoadLevel(levelNumber);
-			//transform.position = spawnPoint;
-			//renderer.enabled = true;
+			Instantiate(playerInfo,reload.transform.position,Quaternion.identity);
 				}
 		
 		//Moving

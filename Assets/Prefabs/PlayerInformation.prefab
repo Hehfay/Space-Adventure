@@ -590,6 +590,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294954491
   healthText: {fileID: 13200000}
+  pickupText: {fileID: 0}
+  reload: {fileID: 0}
+  levelNumber: 3
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
