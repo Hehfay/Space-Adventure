@@ -14,6 +14,7 @@ public class IM_PlayerMovement : MonoBehaviour {
 	Animator anim;								//a value to represent our Animator
 	public bool grounded;						//to check ground and to have a jumpforce we can change in the editor
 	public bool facingRight = true;
+	bool isJumping;
 	public bool squeezedL;
 	public bool squeezedR;
 	public Transform groundCheck;
@@ -44,7 +45,7 @@ public class IM_PlayerMovement : MonoBehaviour {
 		SetHealthText ();
 	}
 	
-	void FixedUpdate () {
+	void Update () {
 
 		//Ground Check
 		grounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);	//set our grounded bool
@@ -52,7 +53,7 @@ public class IM_PlayerMovement : MonoBehaviour {
 
 		//Sprinting then Jumping
 		//If the character is on the ground and sprinting, add large upward force
-		if (grounded && (Input.GetKeyDown(KeyCode.Space) && Input.GetKey (KeyCode.LeftShift) && (Input.GetKey ("a") || Input.GetKey ("d")))) {
+		if (grounded && (Input.GetKey(KeyCode.Space) && Input.GetKey (KeyCode.LeftShift) && (Input.GetKey ("a") || Input.GetKey ("d")))) {
 			anim.SetBool ("Ground", false);
 			if(facingRight){
 				rigidbody2D.AddForce (new Vector2 (sprintJumpLength, sprintJumpHeight));
@@ -64,8 +65,9 @@ public class IM_PlayerMovement : MonoBehaviour {
 
 		//Jumping
 		//If we are on the ground and up was pressed, change our ground state and add an upward force
-		if (grounded && (Input.GetKeyDown (KeyCode.Space) || Input.GetKeyDown ("w"))) {
+		if (grounded && (Input.GetKey (KeyCode.Space) || Input.GetKey ("w"))) {
 			anim.SetBool ("Ground", false);
+			isJumping = true;
 			rigidbody2D.AddForce (new Vector2 (0, jumpForce));
 		}
 
@@ -144,6 +146,13 @@ public class IM_PlayerMovement : MonoBehaviour {
 
 	}
 		
+	//void FixedUpdate{
+	//	if(isJumping){
+	//		rigidbody2D.AddForce (new Vector2 (0, jumpForce));
+	//	}
+	//}
+
+
 
 	void SetHealthText(){
 			healthText.text = "Health: " + healthCount.ToString ();
