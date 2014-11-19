@@ -1660,7 +1660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acc1dbfe92a33454491677137384b714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: -01_00E
+  scene: -02_00P
   doorOrientation: left
 --- !u!50 &1927827046
 Rigidbody2D:

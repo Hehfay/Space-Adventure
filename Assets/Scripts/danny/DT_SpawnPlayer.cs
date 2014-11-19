@@ -16,6 +16,7 @@ public class DT_SpawnPlayer : MonoBehaviour {
 		}
 		else if(previousDoor != currentDoor && previousDoor!= "none"){
 			Instantiate(player,transform.position,Quaternion.identity);
+
 			}
 					Debug.Log( "previousDoor: " + previousDoor );
 
