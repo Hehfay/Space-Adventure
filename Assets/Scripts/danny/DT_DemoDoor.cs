@@ -3,7 +3,7 @@ using System.Collections;
 
 public class DT_DemoDoor : MonoBehaviour {
 	public string scene;
-	public string doorOrientation;
+	public int doorOrientation;
 	
 	// Use this for initialization
 	void Start () {
