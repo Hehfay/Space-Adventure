@@ -10,7 +10,8 @@ h1 {
 
 h2{
 	color:#FF6600;
-	margin-left:115px;
+	/* margin-left:115px; */
+	text-align: center;
 }
 
 h4 {
@@ -20,6 +21,12 @@ h4 {
 
 ul li{
   color:#FF6600;
+}
+
+#container{
+	width: 628px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #circle {
@@ -52,4 +59,5 @@ div p {
 
 p {
 	color:#FF6600;
+	font-size: larger;
 }
