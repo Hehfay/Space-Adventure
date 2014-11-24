@@ -1,4 +1,4 @@
-﻿// IM_PlayerMovement.cs Script
+// IM_PlayerMovement.cs Script
 // This script creates movement for the player including walking 
 // and running left and right as well as jumping and crouching. The 
 // animator is referenced and manipulated whenever the character is 
@@ -24,11 +24,11 @@ public class IM_PlayerMovement : MonoBehaviour {
 	public LayerMask whatCanCrush;
 	float groundRadius = 0.1f;
 	float squeezeRadius = 0.15f;
-	float jumpForce = 725f;
-	float sprintJumpLength = 100f;
-	float sprintJumpHeight = 100f;
+	float jumpForce = 700f;
+	float sprintJumpLength = 50f;
+	float sprintJumpHeight = 25f;
 	float walkingIncrement = 0.09f;
-	float sprintingIncrement = 0.1f;
+	float sprintingIncrement = 0.13f;
 	public GUIText healthText;
 	private int healthCount;
 	public GUIText pickupText;
@@ -83,7 +83,8 @@ public class IM_PlayerMovement : MonoBehaviour {
 		//Moving
 		anim.SetBool ("Moving", false);									//Initialize the Moving animation
 		Vector3 pos = transform.position;
-
+        
+        
 		//Walking to the right
 		if (Input.GetKey ("d")) {
 			anim.SetBool ("Moving", true);

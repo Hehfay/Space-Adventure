@@ -1474,7 +1474,8 @@ MonoBehaviour:
     m_Bits: 4294954491
   healthText: {fileID: 418423992}
   pickupText: {fileID: 0}
-  levelNumber: 3
+  reload: {fileID: 0}
+  playerInfo: {fileID: 0}
 --- !u!61 &1821015698
 BoxCollider2D:
   m_ObjectHideFlags: 0
