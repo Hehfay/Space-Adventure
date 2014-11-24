@@ -87,28 +87,24 @@ public class IM_PlayerMovement : MonoBehaviour {
 		//Walking to the right
 		if (Input.GetKey ("d")) {
 			anim.SetBool ("Moving", true);
-			pos.x += walkingIncrement;
-			transform.position = pos;
-		}
-
-		//Sprinting to the right 
-		if (grounded && (Input.GetKey ("d") && Input.GetKey (KeyCode.LeftShift))) {
-			anim.SetBool ("Moving", true);
-			pos.x += sprintingIncrement;
+			if(grounded && (Input.GetKey (KeyCode.LeftShift))) {
+				pos.x += sprintingIncrement;
+			}
+			else {
+				pos.x += walkingIncrement;
+			}
 			transform.position = pos;
 		}
 
 		//Walking to the left
 		if (Input.GetKey ("a")) {
-			anim.SetBool ("Moving", true);	
-			pos.x -= walkingIncrement;
-			transform.position = pos;
-		}
-
-		//Sprinting to the right
-		if (grounded && (Input.GetKey ("a") && Input.GetKey (KeyCode.LeftShift))) {
-			anim.SetBool ("Moving", true);	
-			pos.x -= sprintingIncrement;
+			anim.SetBool ("Moving", true);
+			if(grounded && (Input.GetKey(KeyCode.LeftShift))) {
+				pos.x -= sprintingIncrement;
+			}
+			else {
+				pos.x -= walkingIncrement;
+			}
 			transform.position = pos;
 		}
 
@@ -159,7 +155,7 @@ public class IM_PlayerMovement : MonoBehaviour {
 		}
 
 	void OnTriggerEnter2D(Collider2D other){
-				if (other.gameObject.tag == "Bullet") {
+				if (other.CompareTag("Bullet")) {
 						healthCount--;
 						SetHealthText ();
 //						other.gameObject.SetActive( false );
@@ -168,7 +164,7 @@ public class IM_PlayerMovement : MonoBehaviour {
 							Destroy( gameObject );
 						}
 				}
-				if (other.gameObject.tag == "Pickup") {
+				if (other.CompareTag("Pickup")) {
 						other.gameObject.SetActive (false);
 						pickupCount++;
 				}

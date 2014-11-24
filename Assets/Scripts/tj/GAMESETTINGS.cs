@@ -3,13 +3,16 @@ using System.Collections;
 
 public class GAMESETTINGS : MonoBehaviour {
 	
-	public static string PreviousDoor;
+	public static int PreviousDoor;
 	public static string CurrentScene;
-	// Use this for initialization
+	public static int PLAYERHEALTH;
+	public static int CURRENTWEAPON;
+	public static string ACTIVEGUNTEXT;
+	// Use this for initializWation
 	
 	
 	void Start () {
-	  PreviousDoor = "none";
+	  PreviousDoor = 0;
 	  CurrentScene ="00_00StartScene";
 	}
 	
@@ -21,8 +24,12 @@ public class GAMESETTINGS : MonoBehaviour {
 	void Awake (){
 	
 		DontDestroyOnLoad(this);
-			  PreviousDoor = "none";
-			  CurrentScene ="00_00StartScene";
+			//  PreviousDoor = 0;
+			//  CurrentScene ="00_00StartScene";
+			  PLAYERHEALTH = 10;
+			  CURRENTWEAPON=1;
+			  ACTIVEGUNTEXT="Grow and Shrink";
+			  
 
 	}
 }

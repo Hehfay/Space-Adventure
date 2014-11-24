@@ -8,17 +8,20 @@ public class MaxandMinDeath : MonoBehaviour {
 	float maxArea;
 	float minArea;
 	
+	private Transform m_objectTransform;
+	
 	// Use this for initialization
 	void Start () {	
 	  maxArea = Max.x * Max.y;
 		minArea = Min.x * Min.y;
+		m_objectTransform = GetComponent<Transform>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		if( gameObject.transform.localScale.y * gameObject.transform.localScale.x >= maxArea ||
-			  gameObject.transform.localScale.y * gameObject.transform.localScale.x <= minArea)
+		if( m_objectTransform.localScale.y * m_objectTransform.localScale.x >= maxArea ||
+			  m_objectTransform.localScale.y * m_objectTransform.localScale.x <= minArea)
 		{
 			Destroy( gameObject );
 		}
