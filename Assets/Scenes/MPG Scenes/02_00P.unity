@@ -229,7 +229,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 44e68e66b2d2e9444b931fc2571cf2db, type: 2}
       propertyPath: doorOrientation
-      value: right
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44e68e66b2d2e9444b931fc2571cf2db, type: 2}
@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 100000, guid: c3c3eda613d6d6d488de068092179461, type: 2}
-  currentDoor: 
+  currentDoor: -1
 --- !u!4 &232207234
 Transform:
   m_ObjectHideFlags: 0
@@ -457,7 +457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: 01_00E
-  doorOrientation: left
+  doorOrientation: -1
 --- !u!50 &342507437
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -845,7 +845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: 00_00StartScene
-  doorOrientation: right
+  doorOrientation: 1
 --- !u!50 &839527259
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1104,7 +1104,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 44e68e66b2d2e9444b931fc2571cf2db, type: 2}
       propertyPath: doorOrientation
-      value: left
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44e68e66b2d2e9444b931fc2571cf2db, type: 2}
@@ -1417,6 +1417,10 @@ Prefab:
     - target: {fileID: 400000, guid: a72d15775e9362240adebcd8f089f107, type: 2}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a72d15775e9362240adebcd8f089f107, type: 2}
+      propertyPath: currentDoor
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a72d15775e9362240adebcd8f089f107, type: 2}
