@@ -3,7 +3,7 @@
 // and running left and right as well as jumping and crouching. The 
 // animator is referenced and manipulated whenever the character is 
 // running, jumping or crouching.
-// 
+// asdf
 // -Written by Isaac Meisner
 
 using UnityEngine;
