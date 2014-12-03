@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class DT_DemoDoor : MonoBehaviour {
-	public string scene;
-	public int doorOrientation;
+	public string currentScene;
+	public string nextScene;
 	
 	// Use this for initialization
 	void Start () {
@@ -19,10 +19,8 @@ public class DT_DemoDoor : MonoBehaviour {
 	{
 		
 		Debug.Log("2D Trigger");
-		
-		GAMESETTINGS.PreviousDoor = doorOrientation;
-		GAMESETTINGS.CurrentScene = scene;
-		Application.LoadLevel(scene);
+		GAMESETTINGS.PREVIOUS_SCENE = currentScene;
+		Application.LoadLevel(nextScene);
 		
 	
 	}

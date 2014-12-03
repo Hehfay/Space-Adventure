@@ -243,7 +243,8 @@ Prefab:
       propertyPath: m_Name
       value: RightSpawnPoint
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11400000, guid: a72d15775e9362240adebcd8f089f107, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a72d15775e9362240adebcd8f089f107, type: 2}
   m_RootGameObject: {fileID: 1653210370}
   m_IsPrefabParent: 0
@@ -878,8 +879,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acc1dbfe92a33454491677137384b714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: 00_00StartScene
-  doorOrientation: 1
+  currentScene: -02_00P
+  nextScene: 00_00StartScene
 --- !u!50 &1157449356
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -957,7 +958,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1235404539}
-  - 114: {fileID: 1235404538}
   m_Layer: 0
   m_Name: LeftSpawnPoint
   m_TagString: Untagged
@@ -965,20 +965,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1235404538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: a72d15775e9362240adebcd8f089f107,
-    type: 2}
-  m_PrefabInternal: {fileID: 1695816239}
-  m_GameObject: {fileID: 1235404537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b97f41b8b1ff84d1087346a809bc0352, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 100000, guid: c3c3eda613d6d6d488de068092179461, type: 2}
-  currentDoor: -1
 --- !u!4 &1235404539
 Transform:
   m_ObjectHideFlags: 0
@@ -1114,9 +1100,8 @@ GameObject:
 --- !u!114 &1653210371
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: a72d15775e9362240adebcd8f089f107,
-    type: 2}
-  m_PrefabInternal: {fileID: 173736517}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1653210370}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1124,7 +1109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 100000, guid: c3c3eda613d6d6d488de068092179461, type: 2}
-  currentDoor: 1
+  ifPrevScene: 00_00StartScene
 --- !u!4 &1653210372
 Transform:
   m_ObjectHideFlags: 0
@@ -1188,7 +1173,8 @@ Prefab:
       propertyPath: m_Name
       value: LeftSpawnPoint
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11400000, guid: a72d15775e9362240adebcd8f089f107, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a72d15775e9362240adebcd8f089f107, type: 2}
   m_RootGameObject: {fileID: 1235404537}
   m_IsPrefabParent: 0
@@ -1250,11 +1236,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 44e68e66b2d2e9444b931fc2571cf2db, type: 2}
       propertyPath: scene
-      value: 00_00StartScene
+      value: -02_00
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 44e68e66b2d2e9444b931fc2571cf2db, type: 2}
       propertyPath: doorOrientation
-      value: 1
+      value: right
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 44e68e66b2d2e9444b931fc2571cf2db, type: 2}
+      propertyPath: nextScene
+      value: 00_00StartScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 44e68e66b2d2e9444b931fc2571cf2db, type: 2}
+      propertyPath: currentScene
+      value: -02_00P
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44e68e66b2d2e9444b931fc2571cf2db, type: 2}

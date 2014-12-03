@@ -3,8 +3,9 @@ using System.Collections;
 
 public class GAMESETTINGS : MonoBehaviour {
 	
-	public static int PreviousDoor;
+	public static string PreviousDoor;
 	public static string CurrentScene;
+	public static string PREVIOUS_SCENE;
 	public static int PLAYERHEALTH;
 	public static int CURRENTWEAPON;
 	public static string ACTIVEGUNTEXT;
@@ -12,7 +13,7 @@ public class GAMESETTINGS : MonoBehaviour {
 	
 	
 	void Start () {
-	  PreviousDoor = 0;
+	  PreviousDoor = "none";
 	  CurrentScene ="00_00StartScene";
 	}
 	
@@ -24,11 +25,9 @@ public class GAMESETTINGS : MonoBehaviour {
 	void Awake (){
 	
 		DontDestroyOnLoad(this);
-			//  PreviousDoor = 0;
-			//  CurrentScene ="00_00StartScene";
-			  PLAYERHEALTH = 10;
-			  CURRENTWEAPON=1;
-			  ACTIVEGUNTEXT="Grow and Shrink";
+		PLAYERHEALTH = 10;
+		CURRENTWEAPON=1;
+		ACTIVEGUNTEXT="Grow and Shrink";
 			  
 
 	}

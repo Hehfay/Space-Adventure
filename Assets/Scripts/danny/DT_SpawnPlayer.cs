@@ -3,23 +3,17 @@ using System.Collections;
 
 public class DT_SpawnPlayer : MonoBehaviour {
 
-	public GameObject player;
-	public int currentDoor;
-	int previousDoor;
+	public	GameObject player;
+	public string ifPrevScene;
+	private string previousScene;
 
 	// Use this for initialization
 	void Start () {
 		
-		previousDoor=GAMESETTINGS.PreviousDoor;
-		if(GAMESETTINGS.CurrentScene=="00_00StartScene" && previousDoor ==0){
-		//	Instantiate(player,transform.position,Quaternion.identity);
-		}
-		else if(previousDoor != currentDoor && previousDoor!= 0){
+		previousScene=GAMESETTINGS.PREVIOUS_SCENE;
+		if( ifPrevScene == previousScene){
 			Instantiate(player,transform.position,Quaternion.identity);
-
-			}
-					//Debug.Log( "previousDoor: " + previousDoor );
-
+		}
 	}
 	
 	// Update is called once per frame
