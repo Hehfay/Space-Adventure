@@ -420,6 +420,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294960635
   healthText: {fileID: 13200000}
+  pickupText: {fileID: 0}
+  reload: {fileID: 0}
+  playerInfo: {fileID: 0}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -541,7 +544,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 3475736105
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300012, guid: dfbd5ddbd9b1a4e5e8d7e594be099a4d, type: 3}
+  m_Sprite: {fileID: 21300016, guid: dfbd5ddbd9b1a4e5e8d7e594be099a4d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21200004
 SpriteRenderer:
