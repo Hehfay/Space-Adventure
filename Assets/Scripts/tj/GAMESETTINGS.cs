@@ -9,6 +9,7 @@ public class GAMESETTINGS : MonoBehaviour {
 	public static int PLAYERHEALTH;
 	public static int CURRENTWEAPON;
 	public static string ACTIVEGUNTEXT;
+	public static bool PAUSED;
 	
 	// Use this for initializWation
 	
@@ -16,7 +17,7 @@ public class GAMESETTINGS : MonoBehaviour {
 	void Start () {
 	  PreviousDoor = "none";
 	  CurrentScene ="00_00StartScene";
-	 // PREVIOUS_SCENE="none";
+	  PAUSED = false;
 	}
 	
 	// Update is called once per frame
