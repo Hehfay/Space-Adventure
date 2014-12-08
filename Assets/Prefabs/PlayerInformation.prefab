@@ -8,11 +8,15 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
+<<<<<<< HEAD
   - 114: {fileID: 11400010}
   - 114: {fileID: 11400016}
   m_Layer: 0
+=======
+  m_Layer: 9
+>>>>>>> TJSceneDev
   m_Name: PlayerInformation
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,7 +183,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400020}
+<<<<<<< HEAD
   m_Layer: 0
+=======
+  m_Layer: 9
+>>>>>>> TJSceneDev
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +236,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400026}
+<<<<<<< HEAD
   m_Layer: 0
+=======
+  m_Layer: 9
+>>>>>>> TJSceneDev
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

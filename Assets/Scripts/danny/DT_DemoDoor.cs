@@ -8,6 +8,7 @@ public class DT_DemoDoor : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Debug.Log("Walk through door to get to a new scene.");
+		GAMESETTINGS.PREVIOUS_SCENE = "none";
 	}
 	
 	// Update is called once per frame
@@ -17,12 +18,11 @@ public class DT_DemoDoor : MonoBehaviour {
 
 	void OnTriggerEnter2D( Collider2D player)
 	{
-		
-		Debug.Log("2D Trigger");
-		GAMESETTINGS.PREVIOUS_SCENE = currentScene;
-		Application.LoadLevel(nextScene);
-		
-	
-	}
 
+		if (player.collider2D.tag == "Player"){
+			Debug.Log("2D Trigger");
+			GAMESETTINGS.PREVIOUS_SCENE = currentScene;
+			Application.LoadLevel(nextScene);
+		}
+	}
 }
