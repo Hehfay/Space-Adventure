@@ -724,6 +724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colliders: {fileID: 11400010}
+  pausing: {fileID: 11400016}
   facingRight: 0
   healthText: {fileID: 0}
   pickupText: {fileID: 0}
@@ -792,7 +793,7 @@ MonoBehaviour:
   jSqueezeCheckR: {fileID: 400034}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 4294965759
+    m_Bits: 4294951368
   whatCanCrush:
     serializedVersion: 2
     m_Bits: 4294956543
@@ -835,8 +836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7d20bf2eb364a7eaa394f37a19eca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paused: 0
-  pauseGUI: {fileID: 0}
+  pauseText: {fileID: 0}
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1
