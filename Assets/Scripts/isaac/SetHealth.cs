@@ -12,7 +12,8 @@ public class SetHealth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		}
+		SetHealthText ();
+	}
 
 
 	void OnTriggerEnter2D(Collider2D other){
