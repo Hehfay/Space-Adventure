@@ -17,11 +17,11 @@ public class DT_DemoDoor : MonoBehaviour {
 
 	void OnTriggerEnter2D( Collider2D player)
 	{
-		if (player.collider2D.tag == "player"){
-			Debug.Log("2D Trigger");
-			GAMESETTINGS.PREVIOUS_SCENE = currentScene;
-			Application.LoadLevel(nextScene);
-		}
+		
+		Debug.Log("2D Trigger");
+		GAMESETTINGS.PREVIOUS_SCENE = currentScene;
+		Application.LoadLevel(nextScene);
+		
 	
 	}
 

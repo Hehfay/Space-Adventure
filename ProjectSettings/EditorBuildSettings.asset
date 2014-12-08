@@ -5,3 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MPG Scenes/00_00StartScene.unity
+  - enabled: 1
+    path: Assets/Scenes/MPG Scenes/01_00E.unity
+  - enabled: 1
+    path: Assets/Scenes/MPG Scenes/-01_00E.unity
+  - enabled: 1
+    path: Assets/Scenes/MPG Scenes/02_00P.unity
+  - enabled: 1
+    path: Assets/Scenes/MPG Scenes/02_00P.unity
+  - enabled: 1
+    path: Assets/Scenes/MPG Scenes/-02_00P.unity
