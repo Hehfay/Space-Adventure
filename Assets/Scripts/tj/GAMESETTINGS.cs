@@ -9,6 +9,7 @@ public class GAMESETTINGS : MonoBehaviour {
 	public static int PLAYERHEALTH;
 	public static int CURRENTWEAPON;
 	public static string ACTIVEGUNTEXT;
+	
 	// Use this for initializWation
 	
 	

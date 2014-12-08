@@ -676,7 +676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 100000, guid: c3c3eda613d6d6d488de068092179461, type: 2}
-  ifPrevScene: none
+  ifPrevScene: startScene
 --- !u!4 &693038749
 Transform:
   m_ObjectHideFlags: 0
