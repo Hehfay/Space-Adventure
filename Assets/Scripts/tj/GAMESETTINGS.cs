@@ -15,6 +15,7 @@ public class GAMESETTINGS : MonoBehaviour {
 	void Start () {
 	  PreviousDoor = "none";
 	  CurrentScene ="00_00StartScene";
+	 // PREVIOUS_SCENE="none";
 	}
 	
 	// Update is called once per frame
