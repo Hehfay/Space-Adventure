@@ -20,12 +20,6 @@ public class IM_PlayerMovement : MonoBehaviour {
 	float walkingIncrement = 0.09f;
 	float sprintingIncrement = 0.13f;
 	int jumpCount;
-	public GUIText healthText;
-	private int healthCount;
-	public GUIText pickupText;
-	private int pickupCount;
-	public DT_SpawnPlayer reload;
-	public Transform playerInfo; 
 	Animator anim;								//a value to represent our Animator
 
 	// Use this for initialization
