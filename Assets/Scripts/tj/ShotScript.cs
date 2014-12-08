@@ -74,7 +74,7 @@ public class ShotScript : MonoBehaviour {
 			Debug.DrawLine(firePointPosition, (mousePosition-firePointPosition) *100);
 		}
 		if (hit.collider != null){
-			if (hit.collider.gameObject.layer == 10){
+			if (hit.collider.gameObject.layer == 10 || hit.collider.gameObject.layer == 14){
 				if(DebugShot == true){
 					Debug.DrawLine(firePointPosition,hit.point,Color.red);
 					Debug.Log("Hit:"+hit.collider.name);
@@ -112,7 +112,7 @@ public class ShotScript : MonoBehaviour {
 			Debug.DrawLine(firePointPosition, (mousePosition-firePointPosition) *100);
 		}
 		if (hit.collider != null){
-			if (hit.collider.gameObject.layer == 10){
+			if (hit.collider.gameObject.layer == 10 || hit.collider.gameObject.layer == 14){
 				if(DebugShot==true){
 					Debug.DrawLine(firePointPosition,hit.point,Color.green);
 					Debug.Log("Hit:"+hit.collider.name);
