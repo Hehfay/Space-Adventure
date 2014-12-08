@@ -2,31 +2,41 @@
 using System.Collections;
 
 public class UIManagerScript : MonoBehaviour {
-	
-	public bool paused;
-	public GUIText pauseGUI;
+
+	public GUIText pauseText;
 
 	void Start(){
-		pauseGUI.enabled = false;
-		paused = false;
+		pauseText.enabled = false;
+		GAMESETTINGS.PAUSED = false;
 	}
 
 	void Update()
 	{
-		if (Input.GetKey ("p") && paused == false) {
-			Time.timeScale = 0;
-			pauseGUI.enabled = true;
-			paused = true;
-		}else if (Input.GetKey ("p") && paused){
-			Time.timeScale = 1;
-			pauseGUI.enabled = false;
-			paused = false;
+		if (Input.GetKeyUp ("p") && !GAMESETTINGS.PAUSED) {
+			PauseGame();
+		}else if (Input.GetKeyUp ("p") && GAMESETTINGS.PAUSED){
+			UnpauseGame();
 		}
 	}
 
 	public void StartGame()
 	{
 		Application.LoadLevel("00_00StartScene");
+		//GAMESETTINGS.previousScene = "00_00StartScene";
+	}
+
+	public void PauseGame()
+	{
+		GAMESETTINGS.PAUSED = true;
+		Time.timeScale = 0;
+		pauseText.enabled = true;
+	}
+
+	public void UnpauseGame()
+	{
+		GAMESETTINGS.PAUSED = false;
+		Time.timeScale = 1; 
+		pauseText.enabled = false;
 	}
 
 	public void Settings()

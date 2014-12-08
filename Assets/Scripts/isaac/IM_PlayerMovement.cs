@@ -12,7 +12,7 @@ using System.Collections;
 public class IM_PlayerMovement : MonoBehaviour {
 
 	public colliderBehaviors colliders;
-
+	public UIManagerScript pausing;
 	public bool facingRight = true;
 	float jumpForce = 14f;
 	float sprintJumpLength = 150f;
@@ -41,31 +41,33 @@ public class IM_PlayerMovement : MonoBehaviour {
 		if (colliders.iGrounded) {
 			anim.SetBool ("Ground", colliders.iGrounded);								//set ground in our Animator to match grounded
 		}
-		
-		//Walking to the right
-		if (Input.GetKey ("d")) {
-			anim.SetBool ("Moving", true);
-			if(colliders.iGrounded && (Input.GetKey (KeyCode.LeftShift))) {
-				pos.x += sprintingIncrement;
+
+
+		if(!(GAMESETTINGS.PAUSED)){
+			//Walking to the right
+			if (Input.GetKey ("d")) {
+				anim.SetBool ("Moving", true);
+				if(colliders.iGrounded && (Input.GetKey (KeyCode.LeftShift))) {
+					pos.x += sprintingIncrement;
+				}
+				else {
+					pos.x += walkingIncrement;
+				}
+				transform.position = pos;
 			}
-			else {
-				pos.x += walkingIncrement;
+			
+			//Walking to the left
+			if (Input.GetKey ("a")) {
+				anim.SetBool ("Moving", true);
+				if(colliders.iGrounded && (Input.GetKey(KeyCode.LeftShift))) {
+					pos.x -= sprintingIncrement;
+				}
+				else {
+					pos.x -= walkingIncrement;
+				}
+				transform.position = pos;
 			}
-			transform.position = pos;
 		}
-		
-		//Walking to the left
-		if (Input.GetKey ("a")) {
-			anim.SetBool ("Moving", true);
-			if(colliders.iGrounded && (Input.GetKey(KeyCode.LeftShift))) {
-				pos.x -= sprintingIncrement;
-			}
-			else {
-				pos.x -= walkingIncrement;
-			}
-			transform.position = pos;
-		}
-		
 	}
 
 	void FixedUpdate () {
