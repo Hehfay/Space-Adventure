@@ -16,20 +16,20 @@ public class GAMESETTINGS : MonoBehaviour {
 
 	void Start () {
 	  PreviousDoor = "none";
-	  CurrentScene ="startScene";
+	  CurrentScene = "startScene";
 	  PAUSED = false;
 	  pauseText.enabled = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-		if (Input.GetKeyUp ("p") && !PAUSED) {
-			PauseGame();
-		}else if (Input.GetKeyUp ("p") && PAUSED){
-			UnpauseGame();
+		if(CurrentScene != "startScene"){
+			if (Input.GetKeyUp ("p") && !PAUSED) {
+				PauseGame();
+			}else if (Input.GetKeyUp ("p") && PAUSED){
+				UnpauseGame();
+			}
 		}
-	
 	}
 
 	public void PauseGame()

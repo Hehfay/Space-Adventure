@@ -9,15 +9,18 @@ public class DT_SpawnPlayer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-		previousScene=GAMESETTINGS.PREVIOUS_SCENE;
-		if( ifPrevScene == previousScene){
-			Instantiate(player,transform.position,Quaternion.identity);
-		}
+		Spawn();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	public void Spawn(){
+		previousScene=GAMESETTINGS.PREVIOUS_SCENE;
+		if( ifPrevScene == previousScene){
+			Instantiate(player,transform.position,Quaternion.identity);
+		}
 	}
 }

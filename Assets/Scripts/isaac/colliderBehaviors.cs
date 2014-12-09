@@ -5,6 +5,7 @@ public class colliderBehaviors : MonoBehaviour {
 
 	GameObject player;
 	GameObject idleColliders;
+	public DT_SpawnPlayer newPlayer;
 	public bool iGrounded;						//to check ground and to have a jumpforce we can change in the editor
 	public bool iSqueezedL;
 	public bool iSqueezedR;
@@ -54,7 +55,7 @@ public class colliderBehaviors : MonoBehaviour {
 
 		if (iSqueezedL && iSqueezedR) {
 			player.SetActive(false);
-			Application.LoadLevel("00_00StartScene");
+			Application.LoadLevel(GAMESETTINGS.CurrentScene);
 		}
 
 		if (iGrounded && (Input.GetKey (KeyCode.Space) || Input.GetKey ("w"))) {
@@ -63,7 +64,7 @@ public class colliderBehaviors : MonoBehaviour {
 			jSqueezedR = Physics2D.OverlapCircle (jSqueezeCheckR.position, squeezeRadius, whatCanCrush);
 			if (jSqueezedL && jSqueezedR) {
 				player.SetActive(false);
-				Application.LoadLevel("00_00StartScene");
+				Application.LoadLevel(GAMESETTINGS.CurrentScene);
 			}
 		}
 	

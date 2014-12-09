@@ -677,7 +677,7 @@ MonoBehaviour:
   jSqueezeCheckR: {fileID: 400006}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 4294959560
+    m_Bits: 4294959561
   whatCanCrush:
     serializedVersion: 2
     m_Bits: 4294952393

@@ -8,16 +8,13 @@ public class WeaponSelect : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if(GAMESETTINGS.CurrentScene == "startScene"){
-			ActiveGunText.enabled = false;
-			//ActiveGunText.text = "Grow and Shrink";
-		}
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(GAMESETTINGS.CurrentScene != "startScene"){
+			ActiveGunText.text = "Grow and Shrink";
 			if(Input.GetKeyDown(KeyCode.Alpha1)){ //if I press the "1" button, switch currentWeapon to 1.
 				currentWeapon = 1;
 				ActiveGunText.text = "Grow and Shrink";
