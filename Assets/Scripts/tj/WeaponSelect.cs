@@ -3,7 +3,7 @@ using System.Collections;
 
 public class WeaponSelect : MonoBehaviour {
 
-	public static int currentWeapon = 1;
+	public static int currentWeapon;
 	public GUIText ActiveGunText;
 
 	// Use this for initialization
@@ -14,7 +14,8 @@ public class WeaponSelect : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(GAMESETTINGS.CurrentScene != "startScene"){
-			ActiveGunText.text = "Grow and Shrink";
+			ActiveGunText.enabled = true;
+			ActiveGunText.text = GAMESETTINGS.ACTIVEGUNTEXT;
 			if(Input.GetKeyDown(KeyCode.Alpha1)){ //if I press the "1" button, switch currentWeapon to 1.
 				currentWeapon = 1;
 				ActiveGunText.text = "Grow and Shrink";
@@ -26,10 +27,14 @@ public class WeaponSelect : MonoBehaviour {
 				GAMESETTINGS.ACTIVEGUNTEXT="Telekinesis";
 			}
 		}
+		else{
+			ActiveGunText.enabled = false;
+		}
 	}
 
 	void Awake(){
 		GAMESETTINGS.CURRENTWEAPON = currentWeapon;
 		ActiveGunText.text = GAMESETTINGS.ACTIVEGUNTEXT;
+		currentWeapon = 1;
 	}
 }
