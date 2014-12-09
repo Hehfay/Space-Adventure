@@ -19,4 +19,9 @@ public class UIManagerScript : MonoBehaviour {
 	{
 		Application.LoadLevel ("startScreen");
 	}
+
+	void Awake(){
+		//GAMESETTINGS.PREVIOUS_SCENE = "startScene";
+		//GAMESETTINGS.CurrentScene = "00_00StartScene";
+	}
 }

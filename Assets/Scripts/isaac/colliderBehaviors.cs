@@ -54,8 +54,10 @@ public class colliderBehaviors : MonoBehaviour {
 		//anim.SetBool ("Squeezed", squeezed);
 
 		if (iSqueezedL && iSqueezedR) {
-			player.SetActive(false);
-			Application.LoadLevel(GAMESETTINGS.CurrentScene);
+			//player.SetActive(false);
+			//Destroy(player);
+			GAMESETTINGS.DEAD = true;
+		//	Application.LoadLevel(GAMESETTINGS.CurrentScene);
 		}
 
 		if (iGrounded && (Input.GetKey (KeyCode.Space) || Input.GetKey ("w"))) {
@@ -63,8 +65,12 @@ public class colliderBehaviors : MonoBehaviour {
 			jSqueezedL = Physics2D.OverlapCircle (jSqueezeCheckL.position, squeezeRadius, whatCanCrush);
 			jSqueezedR = Physics2D.OverlapCircle (jSqueezeCheckR.position, squeezeRadius, whatCanCrush);
 			if (jSqueezedL && jSqueezedR) {
-				player.SetActive(false);
-				Application.LoadLevel(GAMESETTINGS.CurrentScene);
+				//player.SetActive(false);
+				//Destroy(player);
+				GAMESETTINGS.DEAD = true;
+
+			//	GAMESETTINGS.
+			//	Application.LoadLevel(GAMESETTINGS.CurrentScene);
 			}
 		}
 	

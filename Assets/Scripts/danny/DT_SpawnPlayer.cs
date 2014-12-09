@@ -8,7 +8,7 @@ public class DT_SpawnPlayer : MonoBehaviour {
 	private string previousScene;
 
 	// Use this for initialization
-	void Start () {
+	void Start() {
 		Spawn();
 	}
 	
@@ -21,6 +21,8 @@ public class DT_SpawnPlayer : MonoBehaviour {
 		previousScene=GAMESETTINGS.PREVIOUS_SCENE;
 		if( ifPrevScene == previousScene){
 			Instantiate(player,transform.position,Quaternion.identity);
+			Debug.Log("player made");
 		}
 	}
+	
 }

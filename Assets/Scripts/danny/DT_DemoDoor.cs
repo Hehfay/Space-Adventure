@@ -20,7 +20,8 @@ public class DT_DemoDoor : MonoBehaviour {
 	{
 
 		if (player.collider2D.tag == "Player"){
-			Debug.Log("2D Trigger");
+			Debug.Log("CurrentScene:" + nextScene);
+			Debug.Log("PreviousScene:" + currentScene);
 			GAMESETTINGS.PREVIOUS_SCENE = currentScene;
 			GAMESETTINGS.CurrentScene = nextScene;
 			Application.LoadLevel(nextScene);

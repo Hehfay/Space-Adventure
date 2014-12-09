@@ -11,11 +11,12 @@ public class GAMESETTINGS : MonoBehaviour {
 	public static string ACTIVEGUNTEXT;
 	public static bool PAUSED;
 	public GUIText pauseText;
+	public static bool DEAD;
 	
 	// Use this for initializWation
 
 	void Start () {
-	  PreviousDoor = "none";
+	//  PreviousDoor = "none";
 	  CurrentScene = "startScene";
 	  PAUSED = false;
 	  pauseText.enabled = false;
@@ -29,6 +30,10 @@ public class GAMESETTINGS : MonoBehaviour {
 			}else if (Input.GetKeyUp ("p") && PAUSED){
 				UnpauseGame();
 			}
+		}
+		
+		if(DEAD == true){
+			ohManYouDied();
 		}
 	}
 
@@ -47,11 +52,24 @@ public class GAMESETTINGS : MonoBehaviour {
 	}
 	
 	void Awake (){
-	
 		DontDestroyOnLoad(this);
+		
+		
+		DEAD = false;
+		PreviousDoor = "none";
+		CurrentScene = "startScene";
+		PAUSED = false;
+		pauseText.enabled = false;
 		PLAYERHEALTH = 10;
 		CURRENTWEAPON=1;
 		ACTIVEGUNTEXT="Grow and Shrink";
 
 	}
+	
+	void ohManYouDied(){
+		DEAD = false;
+		Debug.Log("DEAD");
+		Application.LoadLevel(CurrentScene);
+	}
+	
 }

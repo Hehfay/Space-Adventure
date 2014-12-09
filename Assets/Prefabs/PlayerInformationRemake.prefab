@@ -11,7 +11,7 @@ GameObject:
   - 61: {fileID: 6100000}
   m_Layer: 9
   m_Name: jBox2dCollider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ GameObject:
   - 61: {fileID: 6100002}
   m_Layer: 9
   m_Name: iBox2dCollider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +42,7 @@ GameObject:
   - 4: {fileID: 400004}
   m_Layer: 9
   m_Name: jumpColliders
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,7 +58,7 @@ GameObject:
   - 58: {fileID: 5800000}
   m_Layer: 9
   m_Name: jSqueezeCheckR
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: -2065832391, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,7 +73,7 @@ GameObject:
   - 4: {fileID: 400008}
   m_Layer: 9
   m_Name: idleColliders
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,7 +89,7 @@ GameObject:
   - 58: {fileID: 5800002}
   m_Layer: 9
   m_Name: jSqueezeCheckL
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: -2065832391, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,7 +105,7 @@ GameObject:
   - 58: {fileID: 5800004}
   m_Layer: 9
   m_Name: iGroundCheck
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,7 +157,7 @@ GameObject:
   - 58: {fileID: 5800006}
   m_Layer: 9
   m_Name: iSqueezeCheckL
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,7 +173,7 @@ GameObject:
   - 58: {fileID: 5800008}
   m_Layer: 9
   m_Name: iSqueezeCheckR
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,7 +190,7 @@ GameObject:
   - 114: {fileID: 11400008}
   m_Layer: 9
   m_Name: Arm
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -379,7 +379,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.0600004, y: -7.03000021, z: 0}
+  m_LocalPosition: {x: -4.56818771, y: 3.50117087, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400028}
@@ -665,6 +665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65af3cd3a9e034aa3a374c1453e39aee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newPlayer: {fileID: 0}
   iGrounded: 0
   iSqueezedL: 0
   iSqueezedR: 0
