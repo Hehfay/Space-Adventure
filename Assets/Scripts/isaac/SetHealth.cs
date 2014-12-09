@@ -7,12 +7,17 @@ public class SetHealth : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		if(GAMESETTINGS.CurrentScene == "startScene")
+			HealthText.enabled = false;
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		SetHealthText ();
+		if(GAMESETTINGS.CurrentScene == "startScene")
+			HealthText.enabled = false;
+		else
+			SetHealthText ();
 	}
 
 

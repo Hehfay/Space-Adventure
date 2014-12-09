@@ -16,7 +16,7 @@ public class GAMESETTINGS : MonoBehaviour {
 
 	void Start () {
 	  PreviousDoor = "none";
-	  CurrentScene ="00_00StartScene";
+	  CurrentScene ="startScene";
 	  PAUSED = false;
 	  pauseText.enabled = false;
 	}
