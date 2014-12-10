@@ -5,7 +5,8 @@ public class colliderBehaviors : MonoBehaviour {
 
 	GameObject player;
 	GameObject idleColliders;
-	public DT_SpawnPlayer newPlayer;
+	//public DT_SpawnPlayer newPlayer;
+	public SetHealth gameManager;
 	public bool iGrounded;						//to check ground and to have a jumpforce we can change in the editor
 	public bool iSqueezedL;
 	public bool iSqueezedR;
@@ -13,12 +14,10 @@ public class colliderBehaviors : MonoBehaviour {
 	public Transform iSqueezeCheckR;
 	public Transform iGroundCheck;
 	GameObject jumpColliders;
-	//public bool jGrounded;
 	public bool jSqueezedL;
 	public bool jSqueezedR;
 	public Transform jSqueezeCheckL;
 	public Transform jSqueezeCheckR;
-	//public Transform jGroundCheck;
 	public LayerMask whatIsGround;
 	public LayerMask whatCanCrush;
 	float groundRadius = 0.06f;
@@ -75,5 +74,16 @@ public class colliderBehaviors : MonoBehaviour {
 		}
 	
 	}
+
+	/*void OnCollisionEnter2D(Collision2D col){
+		if (col.gameObject.tag ("Bullet")) {
+			GAMESETTINGS.PLAYERHEALTH --;
+			gameManager.SetHealthText();
+			//other.gameObject.SetActive( false );
+			if (GAMESETTINGS.PLAYERHEALTH <= 0) {
+				GAMESETTINGS.DEAD = true;
+			}
+		}
+	}*/
 
 }

@@ -1056,7 +1056,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 44e68e66b2d2e9444b931fc2571cf2db, type: 2}
       propertyPath: nextScene
-      value: -02_01PS
+      value: -02_01P
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 44e68e66b2d2e9444b931fc2571cf2db, type: 2}
       propertyPath: currentScene
@@ -1306,7 +1306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentScene: -02_00P
-  nextScene: -02_01PS
+  nextScene: -02_01P
 --- !u!50 &1905552148
 Rigidbody2D:
   m_ObjectHideFlags: 0

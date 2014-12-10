@@ -12,7 +12,7 @@ using System.Collections;
 public class IM_PlayerMovement : MonoBehaviour {
 
 	public colliderBehaviors colliders;
-	public UIManagerScript pausing;
+	//public UIManagerScript pausing;
 	public bool facingRight = true;
 	float jumpForce = 14f;
 	float sprintJumpLength = 150f;

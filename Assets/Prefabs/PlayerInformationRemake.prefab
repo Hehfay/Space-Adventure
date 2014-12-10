@@ -665,7 +665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65af3cd3a9e034aa3a374c1453e39aee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newPlayer: {fileID: 0}
+  gameManager: {fileID: 11400014, guid: c8d61629fea2a4559842a776e38abeba, type: 2}
   iGrounded: 0
   iSqueezedL: 0
   iSqueezedR: 0
@@ -757,7 +757,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colliders: {fileID: 11400000}
-  pausing: {fileID: 11400010}
   facingRight: 0
 --- !u!114 &11400014
 MonoBehaviour:

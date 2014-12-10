@@ -9,7 +9,6 @@ public class SetHealth : MonoBehaviour {
 	void Start () {
 		/*if(GAMESETTINGS.CurrentScene == "startScene")
 			HealthText.enabled = false;*/
-
 	}
 	
 	// Update is called once per frame
@@ -18,24 +17,7 @@ public class SetHealth : MonoBehaviour {
 			SetHealthText ();
 	}
 
-
-	void OnTriggerEnter2D(Collider2D other){
-				if (other.CompareTag ("Bullet")) {
-						GAMESETTINGS.PLAYERHEALTH --;
-						SetHealthText ();
-						//other.gameObject.SetActive( false );
-						Destroy (other.gameObject);
-			if (GAMESETTINGS.PLAYERHEALTH <= 0) {
-								Destroy (gameObject);
-						}
-				}
-				/*if (other.CompareTag ("Pickup")) {
-						other.gameObject.SetActive (false);
-						pickupCount++;
-				}*/
-		}
-
-	void SetHealthText(){
+	public void SetHealthText(){
 		HealthText.text = "Health: " + GAMESETTINGS.PLAYERHEALTH.ToString ();
 	}
 			

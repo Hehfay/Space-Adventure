@@ -26,7 +26,8 @@ public class CameraMovement : MonoBehaviour {
 
 
 	void Start(){
-		transform.position = new Vector3 (2.17f, 0.39f, -10.0f);
+		if(GAMESETTINGS.CurrentScene == "00_00StartScene")
+			transform.position = new Vector3 (2.17f, 0.39f, -10.0f);
 	}
 	          
 		bool CheckXMargin()

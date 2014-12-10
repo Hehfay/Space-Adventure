@@ -1502,11 +1502,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b97f41b8b1ff84d1087346a809bc0352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDoor: -1
-  leftSpawn: {fileID: 736147705}
-  rightSpawn: {fileID: 0}
-  topSpawn: {fileID: 0}
-  bottomSpawn: {fileID: 0}
+  player: {fileID: 100030, guid: 24103dc0b7f8d400087a87fccc61f894, type: 2}
+  ifPrevScene: 00_00StartScene
 --- !u!4 &736147707
 Transform:
   m_ObjectHideFlags: 0
@@ -1514,7 +1511,7 @@ Transform:
   m_PrefabInternal: {fileID: 1019203039}
   m_GameObject: {fileID: 736147705}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.6800108, y: 12.880619, z: 0}
+  m_LocalPosition: {x: -16.1000004, y: 12.8999996, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1713,9 +1710,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acc1dbfe92a33454491677137384b714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: 02_00P
-  nextScene: 
-  doorOrientation: 1
+  currentScene: 01_00E
+  nextScene: 02_00P
 --- !u!50 &816543326
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -2062,11 +2058,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: a72d15775e9362240adebcd8f089f107, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -14.6800108
+      value: -16.1000004
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a72d15775e9362240adebcd8f089f107, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 12.880619
+      value: 12.8999996
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a72d15775e9362240adebcd8f089f107, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2090,7 +2086,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a72d15775e9362240adebcd8f089f107, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: a72d15775e9362240adebcd8f089f107, type: 2}
       propertyPath: currentDoor
@@ -2100,6 +2096,14 @@ Prefab:
       propertyPath: leftSpawn
       value: 
       objectReference: {fileID: 736147705}
+    - target: {fileID: 11400000, guid: a72d15775e9362240adebcd8f089f107, type: 2}
+      propertyPath: ifPrevScene
+      value: 00_00StartScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a72d15775e9362240adebcd8f089f107, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 100030, guid: 24103dc0b7f8d400087a87fccc61f894, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a72d15775e9362240adebcd8f089f107, type: 2}
   m_RootGameObject: {fileID: 736147705}
@@ -2150,6 +2154,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 44e68e66b2d2e9444b931fc2571cf2db, type: 2}
       propertyPath: scene
+      value: 02_00P
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 44e68e66b2d2e9444b931fc2571cf2db, type: 2}
+      propertyPath: currentScene
+      value: 01_00E
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 44e68e66b2d2e9444b931fc2571cf2db, type: 2}
+      propertyPath: nextScene
       value: 02_00P
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3406,6 +3418,10 @@ Prefab:
       propertyPath: nextScene
       value: 00_00StartScene
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 44e68e66b2d2e9444b931fc2571cf2db, type: 2}
+      propertyPath: currentScene
+      value: 01_00E
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44e68e66b2d2e9444b931fc2571cf2db, type: 2}
   m_RootGameObject: {fileID: 2082253387}
@@ -3443,9 +3459,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acc1dbfe92a33454491677137384b714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: 
+  currentScene: 01_00E
   nextScene: 00_00StartScene
-  doorOrientation: -1
 --- !u!50 &2082253389
 Rigidbody2D:
   m_ObjectHideFlags: 0
