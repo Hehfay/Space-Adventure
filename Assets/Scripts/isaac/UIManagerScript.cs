@@ -15,9 +15,13 @@ public class UIManagerScript : MonoBehaviour {
 		Application.LoadLevel ("Settings");
 	}
 
+	public void backFromSettings(){
+		Application.LoadLevel ("startScene");
+	}
+
 	public void QuitGame()
 	{
-		Application.LoadLevel ("startScreen");
+		Application.LoadLevel ("startScene");
 	}
 
 	void Awake(){

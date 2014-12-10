@@ -23,6 +23,11 @@ public class CameraMovement : MonoBehaviour {
 		float cameraMin = 2.0f;
 		float cameraMax = 10.0f;
 		float zoomIncrement = 0.5f;
+
+
+	void Start(){
+		transform.position = new Vector3 (2.17f, 0.39f, -10.0f);
+	}
 	          
 		bool CheckXMargin()
 		{

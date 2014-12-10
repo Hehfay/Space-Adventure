@@ -71,5 +71,6 @@ public class GAMESETTINGS : MonoBehaviour {
 		Debug.Log("DEAD");
 		Application.LoadLevel(CurrentScene);
 	}
-	
+
+
 }
