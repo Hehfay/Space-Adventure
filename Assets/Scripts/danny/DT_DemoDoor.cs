@@ -8,7 +8,7 @@ public class DT_DemoDoor : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//Debug.Log("Walk through door to get to a new scene.");
-		GAMESETTINGS.PREVIOUS_SCENE = "none";
+		//GAMESETTINGS.PREVIOUS_SCENE = "none";
 	}
 	
 	// Update is called once per frame

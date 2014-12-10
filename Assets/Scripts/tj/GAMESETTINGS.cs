@@ -56,7 +56,7 @@ public class GAMESETTINGS : MonoBehaviour {
 		
 		
 		DEAD = false;
-		PreviousDoor = "none";
+	//	PreviousDoor = "none";
 		CurrentScene = "startScene";
 		PAUSED = false;
 		pauseText.enabled = false;

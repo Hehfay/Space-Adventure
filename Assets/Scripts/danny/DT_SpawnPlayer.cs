@@ -19,6 +19,8 @@ public class DT_SpawnPlayer : MonoBehaviour {
 
 	public void Spawn(){
 		previousScene=GAMESETTINGS.PREVIOUS_SCENE;
+		Debug.Log("Previous Scene:" + GAMESETTINGS.PREVIOUS_SCENE);
+		Debug.Log ("Did it work");
 		if( ifPrevScene == previousScene){
 			Instantiate(player,transform.position,Quaternion.identity);
 			Debug.Log("player made");

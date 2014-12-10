@@ -1084,7 +1084,7 @@ GameObject:
   - 61: {fileID: 1538942178}
   - 50: {fileID: 1538942177}
   - 233: {fileID: 1538942176}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
