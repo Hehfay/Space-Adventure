@@ -17,8 +17,6 @@ public class DT_BulletMovement : MonoBehaviour {
 
     pos0 = transform.position;
 
-    Debug.Log( direction);
-    Debug.Log( direction.magnitude);
   }
   
   // Update is called once per frame
