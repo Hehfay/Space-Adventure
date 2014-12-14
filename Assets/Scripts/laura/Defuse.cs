@@ -10,12 +10,13 @@ public class Defuse : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+	}
 	public void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.collider2D.tag == "Player") {
-		Debug.Log("Congratulations! You defused the bomb in time!");
-		//Application.LoadLevel();
+			Debug.Log("Congratulations! You defused the bomb in time!");
+			//Application.LoadLevel();
 		}
-	}
 	}
 }

@@ -12,6 +12,8 @@ TagManager:
   - Cover
   - Enemy
   - 
+  - Pickup
+  - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
   Builtin Layer 2: Ignore Raycast
@@ -52,4 +54,8 @@ TagManager:
   - name: Player
     userID: 1
     uniqueID: 3475736105
+    locked: 0
+  - name: Background
+    userID: 2
+    uniqueID: 1364070279
     locked: 0
